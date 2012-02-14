@@ -1,0 +1,31 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler"
+	xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson"
+	xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:u="/util">
+	
+	<tr><td colspan="2" style="width:100%" align="center">
+	<h1>${%Dr Memory Results}</h1>
+
+	<j:set var="result" value="${from.getResult()}"/>
+
+	<table style="border-collapse:collapse;width:100%">
+		
+		<tr>
+			<td style="border-bottom:solid;font-weight:bold;padding-right:15px">Error</td>
+			<td style="border-bottom:solid;font-weight:bold;padding-right:15px" align="center">${%Total}</td>
+			<td style="border-bottom:solid;font-weight:bold;padding-right:15px" align="center">${%Unique}</td>
+			<td style="border-bottom:solid;font-weight:bold;padding-right:15px" align="center">${%Infomation}</td>
+		</tr>
+		
+		<j:forEach var="r" items="${result.getSummaries()}">
+			<tr>
+				<td style="border-bottom:solid;border-width:1px;font-weight:bold;padding-right:15px">${r.header}</td>
+				<td style="border-bottom:solid;border-width:1px;padding-right:15px" align="center">${r.total}</td>
+				<td style="border-bottom:solid;border-width:1px;padding-right:15px" align="center">${r.unique!=null?r.unique:""}</td>
+				<td style="border-bottom:solid;border-width:1px;padding-right:15px" align="center">${r.info!=null?r.info:""}</td>
+			</tr>
+		</j:forEach>
+		
+	</table>
+	</td></tr>
+	
+</j:jelly>
