@@ -4,7 +4,10 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import org.jfree.chart.ChartFactory;
@@ -23,6 +26,9 @@ import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.StaplerResponse;
 
 import net.praqma.drmemory.DrMemoryResult;
+import net.praqma.jenkins.plugin.drmemory.graphs.AbstractGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.AllLeaksGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.TotalLeaksGraph;
 import hudson.model.AbstractBuild;
 import hudson.model.Action;
 import hudson.model.Result;
@@ -43,10 +49,23 @@ public class DrMemoryBuildAction implements Action {
 	private final AbstractBuild<?, ?> build;
 	private DrMemoryPublisher publisher;
 	
-	public DrMemoryBuildAction( AbstractBuild<?, ?> build, DrMemoryPublisher publisher, DrMemoryResult result ) {
-		this.result = result;
+	private DrMemoryBuilder builder;
+	
+	public DrMemoryBuildAction( AbstractBuild<?, ?> build, DrMemoryBuilder builder ) {
 		this.build = build;
+		this.builder = builder;
+	}
+	
+	public void setPublisher( DrMemoryPublisher publisher ) {
 		this.publisher = publisher;
+	}
+	
+	public void setResult( DrMemoryResult result ) {
+		this.result = result;
+	}
+	
+	public DrMemoryBuilder getBuilder() {
+		return builder;
 	}
 
 	public String getDisplayName() {
@@ -130,8 +149,14 @@ public class DrMemoryBuildAction implements Action {
 		
 		boolean latest = true;
 		String yaxis = "???";
-		int min = 999999999;
-		int max = 0;
+		float min = 999999999;
+		float max = 0;
+		
+		AbstractGraph g = publisher.getGraphTypes().get( type );
+		if( g == null ) {
+			rsp.sendError( 1 );
+			return;
+		}
 		
 		/* For each build, moving backwards */
 		for( DrMemoryBuildAction a = this; a != null; a = a.getPreviousResult() ) {
@@ -140,27 +165,27 @@ public class DrMemoryBuildAction implements Action {
 			/* Make the x-axis label */
 			ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel( a.build );
 			
-			if( type.equalsIgnoreCase( "total-leaks" ) ) {
-				int number = a.getResult().getBytesOfLeaks().total;
-				dsb.add( number, "Total leaks", label );
-				
-				if( number > max ) {
-					max = number;
+			float[] ns = g.getNumber( a );
+			g.addX( dsb, ns, label );
+			
+			for( float n : ns ) {
+				if( n > max ) {
+					max = n;
 				}
 				
-				if( number < min ) {
-					min = number;
+				if( n < min ) {
+					min = n;
 				}
 				
 				if( latest ) {
-					yaxis = "Number of leaks";
+					yaxis = g.getYAxis();
 				}
 			}
 			
 			latest = false;
 		}
 		
-		ChartUtil.generateGraph( req, rsp, createChart( dsb.build(), type, yaxis, max, min ), width, height );
+		ChartUtil.generateGraph( req, rsp, createChart( dsb.build(), g.getTitle(), yaxis, (int)max, (int)min ), width, height );
 	}
 	
 	

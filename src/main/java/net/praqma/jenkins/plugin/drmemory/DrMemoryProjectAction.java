@@ -1,10 +1,17 @@
 package net.praqma.jenkins.plugin.drmemory;
 
+import java.io.IOException;
+
+import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerResponse;
+
 import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
+import hudson.model.Actionable;
+import hudson.model.ProminentProjectAction;
 import hudson.model.Result;
 
-public class DrMemoryProjectAction {
+public class DrMemoryProjectAction extends Actionable implements ProminentProjectAction {
 	private final AbstractProject<?, ?> project;
 
 	public DrMemoryProjectAction( AbstractProject<?, ?> project ) {
@@ -26,6 +33,12 @@ public class DrMemoryProjectAction {
 	public String getUrlName() {
 		return "drmemory";
 	}
+	
+    public void doGraph(StaplerRequest req, StaplerResponse rsp) throws IOException {
+        if (getLastResult() != null) {
+            getLastResult().doGraph(req, rsp);
+        }
+    }
 
 	public DrMemoryBuildAction getLastResult() {
 		for( AbstractBuild<?, ?> b = getLastBuildToBeConsidered(); b != null; b = b.getPreviousNotFailedBuild() ) {

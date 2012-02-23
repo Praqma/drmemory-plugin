@@ -7,10 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import net.praqma.drmemory.DrMemoryResult;
 import net.praqma.drmemory.exceptions.InvalidInputException;
+import net.praqma.jenkins.plugin.drmemory.graphs.AbstractGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.AllLeaksGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.TotalLeaksGraph;
 import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -22,8 +26,10 @@ import hudson.Launcher;
 import hudson.Util;
 import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
+import hudson.model.Action;
 import hudson.model.BuildListener;
 import hudson.model.Result;
+import hudson.model.Descriptor;
 import hudson.model.Descriptor.FormException;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.BuildStepMonitor;
@@ -34,13 +40,17 @@ public class DrMemoryPublisher extends Recorder {
 
 	private static final Logger logger = Logger.getLogger( DrMemoryPublisher.class.getName() );
 
-	private String logPath;
-
 	public static final String __OUTPUT = "drmemory.txt";
+	
+	public static Map<String, AbstractGraph> graphTypes = new HashMap<String, AbstractGraph>();
+	
+	static {
+		graphTypes.put( "total-leaks", new TotalLeaksGraph() );
+		graphTypes.put( "all-leaks", new AllLeaksGraph() );
+	}
 
 	@DataBoundConstructor
-	public DrMemoryPublisher( String logPath ) {
-		this.logPath = logPath;
+	public DrMemoryPublisher() {
 	}
 
 	@Override
@@ -50,28 +60,30 @@ public class DrMemoryPublisher extends Recorder {
 
 	@Override
 	public boolean perform( AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener ) throws InterruptedException, IOException {
-
+		
+		if( build.getResult().isWorseOrEqualTo( Result.FAILURE ) ) {
+			return true;
+		}
+		
 		FilePath workspaceResult = null;
 		File path = build.getRootDir();
 		File result = new File( path, __OUTPUT );
 		FilePath buildTarget = new FilePath( build.getRootDir() );
 		PrintStream out = listener.getLogger();
+		
+		DrMemoryBuildAction action = build.getAction( DrMemoryBuildAction.class );
 
 		out.println( "My workspace is " + build.getWorkspace() );
-		out.println( "Looking(" + logPath + ") in " + new FilePath( build.getWorkspace(), logPath ) );
-
-		try {
-			workspaceResult = new FilePath( build.getWorkspace(), logPath + "/result.txt" );
-
-			if( build.getResult().isWorseOrEqualTo( Result.FAILURE ) && !workspaceResult.exists() ) {
-				return true;
-			}
-
-		} catch( IOException e ) {
-			Util.displayIOException( e, listener );
-			e.printStackTrace( listener.fatalError( "Unable to find Dr Memory file" ) );
-			build.setResult( Result.FAILURE );
+		FilePath resultPath = new FilePath( build.getWorkspace(), action.getBuilder().getFinalLogPath() );
+		
+		FilePath[] rr = resultPath.list( "**/results.txt" );
+		
+		if( rr.length < 1 ) {
+			out.println( "No results to parse" );
+			return true;
 		}
+
+		workspaceResult = rr[0];
 
 		out.println( "I got " + workspaceResult );
 
@@ -92,8 +104,8 @@ public class DrMemoryPublisher extends Recorder {
 		try {
 			dresult = DrMemoryResult.parse( result );
 
-			DrMemoryBuildAction dba = new DrMemoryBuildAction( build, this, dresult );
-			build.getActions().add( dba );
+			action.setPublisher( this );
+			action.setResult( dresult );
 
 		} catch( InvalidInputException e ) {
 			out.println( "Invalid input: " + e.getMessage() );
@@ -102,20 +114,26 @@ public class DrMemoryPublisher extends Recorder {
 
 		return true;
 	}
+		
+	private List<Graph> graphs;
 	
-	public String getLogPath() {
-		return logPath;
-	}
 	
-	private Map<String, Boolean> selectedGraphs = new HashMap<String, Boolean>();
-	
-	public Map<String, Boolean> getSelectedGraphs() {
-		return selectedGraphs;
-	}
-	
-	public boolean isTotalLeak() {
-		return selectedGraphs.containsKey( "total-leaks" );
-	}
+    @Override
+    public Action getProjectAction(AbstractProject<?, ?> project) {
+        return new DrMemoryProjectAction( project );
+    }
+    
+    public Map<String, AbstractGraph> getGraphTypes() {
+    	return graphTypes;
+    }
+    
+    public void setGraphs( List<Graph> graphs ) {
+    	this.graphs = graphs;
+    }
+    
+    public List<Graph> getGraphs() {
+    	return graphs;
+    }
 
 	@Extension
 	public static class DescriptorImpl extends BuildStepDescriptor<Publisher> {
@@ -133,12 +151,44 @@ public class DrMemoryPublisher extends Recorder {
 			DrMemoryPublisher instance = req.bindJSON( DrMemoryPublisher.class, formData );
 			
 			/* total leaks */
+			/*
 			boolean total_leaks = req.getParameter( "graph.total-leaks" ) != null;
 			instance.selectedGraphs.put( "total-leaks", total_leaks );
+			*/
 			
+			System.out.println( formData.toString( 2 ) );
+			
+			List<Graph> graphs = req.bindParametersToList(Graph.class, "drmemory.graph.");
+			instance.setGraphs( graphs );
 			save();
 			return instance;
 		}
+		
+		public List<Graph> getGraphs( DrMemoryPublisher instance) {
+			if( instance == null ) {
+				return new ArrayList<Graph>();
+			} else {
+				return instance.getGraphs();
+			}
+		}
+		
+		public AbstractGraph getGraph( String type ) {
+			return graphTypes.get( type );
+		}
+		
+		public Set<String> getGraphTypes() {
+			return graphTypes.keySet();
+		}
+		
+		/*
+		public List<String> getGraphTypes() {
+			Set<String> keys = graphTypes.keySet();
+			List<>
+			for( String key : keys ) {
+				
+			}
+		}
+		*/
 
 		/*GLOBAL*/
 		@Override

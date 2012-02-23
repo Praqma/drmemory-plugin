@@ -1,0 +1,16 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+    <f:entry title="${%Executable}">
+        <f:textbox name="drmemory.executable" value="${instance.executable}" default="out.exe" />
+    </f:entry>
+    
+    <f:entry title="${%Arguments}">
+        <f:textbox name="drmemory.arguments" value="${instance.arguments}" default="" />
+    </f:entry>
+    
+    <f:entry title="${%Log path}">
+        <f:textbox name="drmemory.logPath" value="${instance.logPath}" default="drmemory/" />
+    </f:entry>
+    
+</j:jelly>
