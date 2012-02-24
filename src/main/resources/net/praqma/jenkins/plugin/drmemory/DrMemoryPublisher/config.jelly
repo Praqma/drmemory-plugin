@@ -2,14 +2,30 @@
 	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
 
 
-	<f:entry title="${%Dr Memory Graphs}">
+	<f:entry title="${%Dr Memory Graphs}" help="/plugin/drmemory-plugin/help/help-stream.html">
+		<j:set var="types" value="${descriptor.getGraphTypes()}" />
 		<f:repeatable var="inst" varStatus="instStatus" items="${descriptor.getGraphs(instance)}">
-			<j:set var="types" value="${descriptor.getGraphTypes()}" />
-				<select class="setting-input" name="drmemory.graph.name">
-					<j:forEach var="t" items="${types}">
-						<f:option selected="${t == inst.name}" value="${t}">${t}</f:option>
-					</j:forEach>
-				</select>
+			
+            <table width="40%">
+                <col width="100%"/>
+
+                <tbody>
+			 		<tr>
+                        <td align="left">
+							<select class="setting-input" name="drmemory.graph.name">
+								<j:forEach var="t" items="${types}">
+									<f:option selected="${t == inst.name}" value="${t}">${instance.getGraph(t).getTitle()}</f:option>
+								</j:forEach>
+							</select>
+						</td>
+					</tr>
+					<tr>
+                        <td align="right">
+                            <f:repeatableDeleteButton/>
+                        </td>
+					</tr>
+				</tbody>
+			</table>
 		</f:repeatable>
 	</f:entry>
 

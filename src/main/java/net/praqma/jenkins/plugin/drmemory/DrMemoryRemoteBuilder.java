@@ -40,7 +40,11 @@ public class DrMemoryRemoteBuilder implements FileCallable<Boolean> {
 		out.println( "Setting log path to " + logpath );
 		dm.setLogDir( logpath );
 		
-		dm.start();
+		try {
+			dm.start();
+		} catch( Exception e ) {
+			out.println( "Recieved " + e.getMessage() );
+		}
 		
 		return true;
 	}

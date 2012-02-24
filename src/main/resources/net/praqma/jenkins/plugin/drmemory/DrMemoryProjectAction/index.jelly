@@ -1,15 +1,15 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
 	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-	<l:layout title="Rebuild" norefresh="true">
+	<l:layout title="Dr. Memory Graphs" norefresh="true">
 
 		<l:main-panel>
 		    <j:set var="lastResult" value="${it.lastResult}"/>
-		    
+
 		    <j:if test="${lastResult != null}">
 		        <j:choose>
-	            	<j:forEach var="unit" items="${lastResult.getGraphs()}">
-	                        <img src="graph?category=${unit}&amp;width=800&amp;height=300"/>
+	            	<j:forEach var="unit" items="${lastResult.getPublisher().getGraphs()}">
+	                        <img src="graph?type=${unit.getName()}&amp;width=800&amp;height=300"/><br />
 		            </j:forEach>
 		        </j:choose>
 		    </j:if>

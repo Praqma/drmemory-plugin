@@ -2,12 +2,12 @@
          xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:local="local">
 
     <j:set var="lastResult" value="${from.lastResult}"/>
-    
     <j:if test="${lastResult != null}">
+
         <j:choose>
             <j:when test="${lastResult.previousResult != null}">
             	<j:forEach var="unit" items="${lastResult.getPublisher().getGraphs()}">
-                        <img src="${from.urlName}/graph?type=${unit}"/>
+                        <img src="${from.urlName}/graph?type=${unit.getName()}"/>
 	            </j:forEach>
             </j:when>
             <j:otherwise>

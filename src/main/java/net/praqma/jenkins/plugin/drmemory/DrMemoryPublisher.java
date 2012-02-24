@@ -13,8 +13,15 @@ import java.util.logging.Logger;
 import net.praqma.drmemory.DrMemoryResult;
 import net.praqma.drmemory.exceptions.InvalidInputException;
 import net.praqma.jenkins.plugin.drmemory.graphs.AbstractGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.ActualLeaksGraph;
 import net.praqma.jenkins.plugin.drmemory.graphs.AllLeaksGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.BytesOfLeakGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.InvalidHeapArgumentsGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.StillReachableAllocationsGraph;
 import net.praqma.jenkins.plugin.drmemory.graphs.TotalLeaksGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.UnaddressableAccessesGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.UninitializedAccessesGraph;
+import net.praqma.jenkins.plugin.drmemory.graphs.WarningsGraph;
 import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -47,6 +54,13 @@ public class DrMemoryPublisher extends Recorder {
 	static {
 		graphTypes.put( "total-leaks", new TotalLeaksGraph() );
 		graphTypes.put( "all-leaks", new AllLeaksGraph() );
+		graphTypes.put( "actual-leaks", new ActualLeaksGraph() );
+		graphTypes.put( "bytes-of-leak", new BytesOfLeakGraph() );
+		graphTypes.put( "allocations", new StillReachableAllocationsGraph() );
+		graphTypes.put( "uninitialized-accesses", new UninitializedAccessesGraph() );
+		graphTypes.put( "unaddressable-accesses", new UnaddressableAccessesGraph() );
+		graphTypes.put( "warnings", new WarningsGraph() );
+		graphTypes.put( "invalid-heap-arguments", new InvalidHeapArgumentsGraph() );
 	}
 
 	@DataBoundConstructor
@@ -61,9 +75,11 @@ public class DrMemoryPublisher extends Recorder {
 	@Override
 	public boolean perform( AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener ) throws InterruptedException, IOException {
 		
+		/*
 		if( build.getResult().isWorseOrEqualTo( Result.FAILURE ) ) {
 			return true;
 		}
+		*/
 		
 		FilePath workspaceResult = null;
 		File path = build.getRootDir();
@@ -131,6 +147,10 @@ public class DrMemoryPublisher extends Recorder {
     	this.graphs = graphs;
     }
     
+	public AbstractGraph getGraph( String type ) {
+		return graphTypes.get( type );
+	}
+    
     public List<Graph> getGraphs() {
     	return graphs;
     }
@@ -164,7 +184,7 @@ public class DrMemoryPublisher extends Recorder {
 			return instance;
 		}
 		
-		public List<Graph> getGraphs( DrMemoryPublisher instance) {
+		public List<Graph> getGraphs( DrMemoryPublisher instance ) {
 			if( instance == null ) {
 				return new ArrayList<Graph>();
 			} else {

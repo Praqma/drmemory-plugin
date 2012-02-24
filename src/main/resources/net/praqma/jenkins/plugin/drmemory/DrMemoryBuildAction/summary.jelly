@@ -13,7 +13,6 @@
 			<td style="border-bottom:solid;font-weight:bold;padding-right:15px">Error</td>
 			<td style="border-bottom:solid;font-weight:bold;padding-right:15px" align="center">${%Total}</td>
 			<td style="border-bottom:solid;font-weight:bold;padding-right:15px" align="center">${%Unique}</td>
-			<td style="border-bottom:solid;font-weight:bold;padding-right:15px" align="center">${%Infomation}</td>
 		</tr>
 		
 		<j:forEach var="r" items="${result.getSummaries()}">
@@ -21,7 +20,6 @@
 				<td style="border-bottom:solid;border-width:1px;font-weight:bold;padding-right:15px">${r.header}</td>
 				<td style="border-bottom:solid;border-width:1px;padding-right:15px" align="center">${r.total}</td>
 				<td style="border-bottom:solid;border-width:1px;padding-right:15px" align="center">${r.unique!=null?r.unique:""}</td>
-				<td style="border-bottom:solid;border-width:1px;padding-right:15px" align="center">${r.info!=null?r.info:""}</td>
 			</tr>
 		</j:forEach>
 		

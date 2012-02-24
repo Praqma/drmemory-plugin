@@ -2,6 +2,7 @@ package net.praqma.jenkins.plugin.drmemory;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -10,6 +11,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.FileUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
@@ -60,6 +65,10 @@ public class DrMemoryBuildAction implements Action {
 		this.publisher = publisher;
 	}
 	
+	public DrMemoryPublisher getPublisher() {
+		return publisher;
+	}
+	
 	public void setResult( DrMemoryResult result ) {
 		this.result = result;
 	}
@@ -88,17 +97,26 @@ public class DrMemoryBuildAction implements Action {
 		return result;
 	}
 	
+	public void doIndex( StaplerRequest req, StaplerResponse rsp ) throws IOException, ServletException {
+		File dm = new File( build.getRootDir(), "drmemory.txt" );
+		Calendar t = build.getTimestamp();
+		if( dm.exists() ) {
+			rsp.serveFile( req, FileUtils.openInputStream( dm ), t.getTimeInMillis(), dm.getTotalSpace(), "drmemory.txt" );
+		} else {
+			rsp.sendError( HttpServletResponse.SC_NO_CONTENT );
+		}
+	}
+	
 	static DrMemoryBuildAction getPreviousResult( AbstractBuild<?, ?> start ) {
 		AbstractBuild<?, ?> b = start;
 		while( true ) {
-			b = b.getPreviousNotFailedBuild();
+			b = b.getPreviousBuild();
 			if( b == null ) {
 				return null;
 			}
 
-			assert b.getResult() != Result.FAILURE : "We asked for the previous not failed build";
 			DrMemoryBuildAction r = b.getAction( DrMemoryBuildAction.class );
-			if( r != null && b.getResult() != Result.SUCCESS ) {
+			if( r != null && r.getResult() == null ) {
 				r = null;
 			}
 

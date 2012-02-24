@@ -37,14 +37,13 @@ public class DrMemoryBuilder extends Builder {
 	
 	public boolean perform( AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener ) throws InterruptedException {
 		PrintStream out = listener.getLogger();
-		DrMemory.enableLogging();
+		//DrMemory.enableLogging();
 		
 		/* Add the action */
 		DrMemoryBuildAction dba = new DrMemoryBuildAction( build, this );
 		build.getActions().add( dba );
 		
 		try {
-			out.println( "GO!" );
 			finalLogPath = logPath += ( logPath.endsWith( "/" ) ? "" : ( logPath.endsWith( "\\" ) ? "" : "/" ) );
 			finalLogPath += build.getNumber();
 			build.getWorkspace().act( new DrMemoryRemoteBuilder( executable, arguments, finalLogPath, listener ) );
