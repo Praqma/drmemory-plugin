@@ -9,7 +9,7 @@
 	<groupId>net.praqma</groupId>
 	<artifactId>drmemory-plugin</artifactId>
 	<version>0.1.1-SNAPSHOT</version>
-	<name>MonKit Plugin</name>
+	<name>Dr. Memory Plugin</name>
 	<description>Integrates Dr. Memory with Jenkins</description>
 	<url>https://wiki.jenkins-ci.org/display/JENKINS/drmemory+plugin</url>
 	<packaging>hpi</packaging>
