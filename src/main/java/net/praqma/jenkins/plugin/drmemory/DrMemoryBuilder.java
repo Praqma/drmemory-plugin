@@ -41,7 +41,7 @@ public class DrMemoryBuilder extends Builder {
 		
 		/* Add the action */
 		DrMemoryBuildAction dba = new DrMemoryBuildAction( build, this );
-		build.getActions().add( dba );
+		build.addAction( dba );
 		
 		try {
 			finalLogPath = logPath += ( logPath.endsWith( "/" ) ? "" : ( logPath.endsWith( "\\" ) ? "" : "/" ) );

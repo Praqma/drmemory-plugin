@@ -1,7 +1,7 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler"
 	xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson"
 	xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:u="/util">
-	
+
 	<tr><td colspan="2" style="width:100%" align="center">
 	<h1>${%Dr Memory Results}</h1>
 

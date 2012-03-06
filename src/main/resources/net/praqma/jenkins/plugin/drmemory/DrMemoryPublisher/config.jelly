@@ -1,6 +1,11 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
 	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-
+	
+	INSTANCE=${instance}<br />
+	IT=${it}<br />
+	FROM=${from}<br />
+	SCM=${scm}<br />
+	
 
 	<f:entry title="${%Dr Memory Graphs}" help="/plugin/drmemory-plugin/help/help-stream.html">
 		<j:set var="types" value="${descriptor.getGraphTypes()}" />
