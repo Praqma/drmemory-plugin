@@ -1,0 +1,4580 @@
+Dr. Memory version 1.4.5 build 2 built on Nov 16 2011 22:44:01
+Application cmdline: ""C:\projects\drmemory-plugin\branches\work\jobs\GE\workspace\bin\Debug\test1.exe""
+Recorded 32 suppression(s) from default C:\Program Files (x86)\Dr. Memory/bin/suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register edi
+# 0 ntdll.dll!RtlMultiByteToUnicodeN
+# 1 USER32.dll!SetProcessDPIAware
+# 2 USER32.dll!EnumWindows
+# 3 USER32.dll!CreateWindowExA
+# 4 test1.exe!?        
+# 5 test1.exe!?        
+# 6 test1.exe!?        
+# 7 KERNEL32.dll!BaseThreadInitThunk
+# 8 ntdll.dll!RtlInitializeExceptionChain
+# 9 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:01.537 in thread 5188
+Note: instruction: cmp    %edi %ebx
+
+Error #2: UNINITIALIZED READ: reading 0x036c5400-0x036c5408 8 byte(s)
+# 0 ig4icd32.dll!?           
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+Note: @0:00:06.053 in thread 5188
+Note: instruction: movq   (%eax) -> %xmm0
+
+Error #3: UNINITIALIZED READ: reading 0x036c5408-0x036c5410 8 byte(s)
+# 0 ig4icd32.dll!?           
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+Note: @0:00:06.053 in thread 5188
+Note: instruction: movq   0x08(%eax) -> %xmm0
+
+Error #4: UNINITIALIZED READ: reading register eax
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.492 in thread 5188
+Note: instruction: cmp    %eax $0x00000040
+
+Error #5: UNINITIALIZED READ: reading register ecx
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.645 in thread 5188
+Note: instruction: cmp    %ecx $0x00000400
+
+Error #6: UNINITIALIZED READ: reading register edx
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.646 in thread 5188
+Note: instruction: cmp    %edx $0x00000004
+
+Error #7: UNINITIALIZED READ: reading 0x0018d48c-0x0018d48d 1 byte(s) within 0x0018d48c-0x0018d490
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvSetContext
+Note: @0:00:06.647 in thread 5188
+Note: instruction: cmp    0x18(%esp) $0x00000004
+
+Error #8: UNINITIALIZED READ: reading register ebp
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvSetContext
+Note: @0:00:06.648 in thread 5188
+Note: instruction: mov    0x10a065a4(,%ebp,4) -> %eax
+
+Error #9: UNINITIALIZED READ: reading register eax
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.655 in thread 5188
+Note: instruction: mov    0x108faae4(,%eax,4) -> %edx
+
+Error #10: UNINITIALIZED READ: reading register eax
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.655 in thread 5188
+Note: instruction: mov    0x108faae4(,%eax,4) -> %eax
+
+Error #11: UNINITIALIZED READ: reading register edx
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.655 in thread 5188
+Note: instruction: mov    0x108faae4(,%edx,4) -> %edx
+
+Error #12: UNINITIALIZED READ: reading register eax
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.655 in thread 5188
+Note: instruction: mov    0x108faae4(,%eax,4) -> %eax
+
+Error #13: UNINITIALIZED READ: reading register eflags
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.656 in thread 5188
+Note: instruction: jz     $0x1053a2a4
+
+Error #14: UNINITIALIZED READ: reading register eflags
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.657 in thread 5188
+Note: instruction: jz     $0x1053b605
+
+Error #15: UNINITIALIZED READ: reading register eflags
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.658 in thread 5188
+Note: instruction: jz     $0x1053b5aa
+
+Error #16: UNINITIALIZED READ: reading register ebp
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvSetContext
+Note: @0:00:06.659 in thread 5188
+Note: instruction: cmp    %ebp 0xfffffffc(%edx)
+
+Error #17: UNINITIALIZED READ: reading register edx
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.660 in thread 5188
+Note: instruction: cmp    %edx $0x00000400
+
+Error #18: UNINITIALIZED READ: reading register ecx
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+Note: @0:00:06.664 in thread 5188
+Note: instruction: cmp    %ecx $0x00000400
+
+Error #19: UNINITIALIZED READ: reading register ecx
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+Note: @0:00:06.665 in thread 5188
+Note: instruction: cmp    %ecx $0x00000013
+
+Error #20: UNINITIALIZED READ: reading 0x025785a6-0x025785a7 1 byte(s) within 0x025785a0-0x025785b0
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:06.715 in thread 5188
+Note: instruction: movdqa (%edx) -> %xmm0
+
+Error #21: UNINITIALIZED READ: reading 0x0018d9d3-0x0018d9d4 1 byte(s) within 0x0018d9a8-0x0018d9d4
+# 0 system call NtGdiGetDIBitsInternal parameter #5
+# 1 OPENGL32.dll!wglGetCurrentDC
+# 2 OPENGL32.dll!wglUseFontBitmapsA
+# 3 test1.exe!?        
+# 4 test1.exe!?        
+# 5 test1.exe!?        
+# 6 KERNEL32.dll!BaseThreadInitThunk
+# 7 ntdll.dll!RtlInitializeExceptionChain
+# 8 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:09.059 in thread 5188
+
+Error #22: UNINITIALIZED READ: reading 0x04583b74-0x04583b78 4 byte(s)
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:10.448 in thread 5188
+Note: instruction: cmp    %ebp (%ecx)
+
+Error #23: UNINITIALIZED READ: reading 0x0252ffcc-0x0252ffd0 4 byte(s)
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:11.407 in thread 5188
+Note: instruction: cmp    %ebp (%ecx)
+
+Error #24: UNINITIALIZED READ: reading register edx
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:11.834 in thread 5188
+Note: instruction: test   %edx %edx
+
+Error #25: UNINITIALIZED READ: reading 0x045bcb74-0x045bcb78 4 byte(s)
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:11.835 in thread 5188
+Note: instruction: cmp    0x000000e8(%eax) $0x000000a0
+
+Error #26: WARNING: prefetching unaddressable memory 0x005b9668-0x005b9669
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:11.989 in thread 5188
+Note: next higher malloc: 0x005b9688-0x005b9698
+Note: prev lower malloc:  0x005b94e8-0x005b965c
+Note: instruction: prefetchnta 0x40(%eax)
+
+Error #27: WARNING: prefetching unaddressable memory 0x036f8d58-0x036f8d59
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:12.202 in thread 5188
+Note: next higher malloc: 0x036f8ec8-0x036f9098
+Note: prev lower malloc:  0x036f8a78-0x036f8d4c
+Note: instruction: prefetchnta 0x40(%eax)
+
+Error #28: WARNING: prefetching unaddressable memory 0x0252f600-0x0252f601
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:12.205 in thread 5188
+Note: next higher malloc: 0x0252f830-0x0252f840
+Note: prev lower malloc:  0x0252f2a0-0x0252f5f4
+Note: instruction: prefetchnta 0x40(%eax)
+
+Error #29: WARNING: prefetching unaddressable memory 0x0252e6c0-0x0252e6c1
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:12.645 in thread 5188
+Note: next higher malloc: 0x0252f2a0-0x0252f5f4
+Note: prev lower malloc:  0x0252e560-0x0252e6a4
+Note: instruction: prefetchnta 0x40(%eax)
+
+Error #30: UNINITIALIZED READ: reading 0x0018dcd4-0x0018dcd8 4 byte(s)
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 test1.exe!?        
+# 4 KERNEL32.dll!BaseThreadInitThunk
+# 5 ntdll.dll!RtlInitializeExceptionChain
+# 6 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:12.692 in thread 5188
+Note: instruction: fcomp  (%esi) %st0
+
+Error #31: UNINITIALIZED READ: reading 0x0018dcd8-0x0018dcdc 4 byte(s)
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 test1.exe!?        
+# 4 KERNEL32.dll!BaseThreadInitThunk
+# 5 ntdll.dll!RtlInitializeExceptionChain
+# 6 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:12.694 in thread 5188
+Note: instruction: fld    0x04(%esi) -> %st0
+
+Error #32: UNINITIALIZED READ: reading 0x0018dd28-0x0018dd2c 4 byte(s)
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:12.780 in thread 5188
+Note: instruction: fld    0x4c(%esi) -> %st0
+
+Error #33: UNINITIALIZED READ: reading 0x0018dd24-0x0018dd28 4 byte(s)
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:12.780 in thread 5188
+Note: instruction: fld    0x48(%esi) -> %st0
+
+Error #34: UNINITIALIZED READ: reading 0x0018dd20-0x0018dd24 4 byte(s)
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:12.780 in thread 5188
+Note: instruction: fld    0x44(%esi) -> %st0
+
+Error #35: UNINITIALIZED READ: reading register edi
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 test1.exe!?        
+#11 test1.exe!?        
+Note: @0:00:12.836 in thread 5188
+Note: instruction: cmp    (%ecx,%eax,8) %edi
+
+Error #36: UNINITIALIZED READ: reading 0x0018da24-0x0018da28 4 byte(s)
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 test1.exe!?        
+Note: @0:00:12.836 in thread 5188
+Note: instruction: cmp    0x10(%esp) $0x00000010
+
+Error #37: UNINITIALIZED READ: reading register edi
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 test1.exe!?        
+#11 test1.exe!?        
+Note: @0:00:12.837 in thread 5188
+Note: instruction: cmp    (%ecx,%eax,8) %edi
+
+Error #38: UNINITIALIZED READ: reading 0x0018da24-0x0018da28 4 byte(s)
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 test1.exe!?        
+Note: @0:00:12.838 in thread 5188
+Note: instruction: cmp    0x10(%esp) $0x00000010
+
+Error #39: UNADDRESSABLE ACCESS: reading 0x003eb3b8-0x003eb3bc 4 byte(s)
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 test1.exe!?        
+Note: @0:00:12.856 in thread 5188
+Note: prev lower malloc:  0x003eafb0-0x003eb330
+Note: 0x003eb3b8-0x003eb3bc overlaps memory 0x003eb370-0x003eb6f0 that was freed
+Note: instruction: mov    0x48(%eax) -> %eax
+
+Error #40: WARNING: prefetching unaddressable memory 0x0254e828-0x0254e829
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:13.358 in thread 5188
+Note: next higher malloc: 0x0254e8f8-0x0254f320
+Note: prev lower malloc:  0x0254e288-0x0254e81c
+Note: instruction: prefetchnta 0x40(%eax)
+
+Error #41: WARNING: prefetching unaddressable memory 0x02546e48-0x02546e49
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!?           
+Note: @0:00:13.374 in thread 5188
+Note: next higher malloc: 0x02547188-0x025471c0
+Note: prev lower malloc:  0x02546c28-0x02546e3c
+Note: instruction: prefetchnta 0x40(%eax)
+
+Error #42: WARNING: prefetching unaddressable memory 0x04586880-0x04586881
+# 0 ig4icd32.dll!ShCompile   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+Note: @0:00:13.375 in thread 5188
+Note: prev lower malloc:  0x045865e0-0x04586874
+Note: instruction: prefetchnta 0x40(%eax)
+
+Error #43: UNINITIALIZED READ: reading 0x004214c1-0x004214c2 1 byte(s)
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 test1.exe!?        
+# 4 test1.exe!?        
+# 5 KERNEL32.dll!BaseThreadInitThunk
+# 6 ntdll.dll!RtlInitializeExceptionChain
+# 7 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:13.428 in thread 5188
+Note: instruction: cmp    0x00000109(%esi) $0x00
+
+Error #44: UNINITIALIZED READ: reading register esi
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 test1.exe!?        
+# 4 test1.exe!?        
+# 5 KERNEL32.dll!BaseThreadInitThunk
+# 6 ntdll.dll!RtlInitializeExceptionChain
+# 7 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:13.551 in thread 5188
+Note: instruction: rep movs %ds:(%esi) %esi %edi %ecx -> %es:(%edi) %esi %edi %ecx
+
+Error #45: UNADDRESSABLE ACCESS: reading 0x00000098-0x0000009c 4 byte(s)
+# 0 test1.exe!?        
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 test1.exe!?        
+# 4 test1.exe!?        
+# 5 KERNEL32.dll!BaseThreadInitThunk
+# 6 ntdll.dll!RtlInitializeExceptionChain
+# 7 ntdll.dll!RtlInitializeExceptionChain
+Note: @0:00:13.551 in thread 5188
+Note: instruction: rep movs %ds:(%esi) %esi %edi %ecx -> %es:(%edi) %esi %edi %ecx
+
+Error #46: LEAK 104 direct bytes 0x025a0008-0x025a0070 + 3844 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!DrvCreateLayerContext
+# 5 OPENGL32.dll!wglSwapMultipleBuffers
+# 6 OPENGL32.dll!wglCreateLayerContext
+# 7 OPENGL32.dll!wglCreateContext
+# 8 test1.exe!?        
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 KERNEL32.dll!BaseThreadInitThunk
+
+Error #47: LEAK 12 direct bytes 0x03680008-0x03680014 + 1984 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #48: LEAK 12 direct bytes 0x036802e0-0x036802ec + 36196 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #49: LEAK 4 direct bytes 0x03680470-0x03680474 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #50: LEAK 4 direct bytes 0x03680530-0x03680534 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #51: LEAK 4 direct bytes 0x03680920-0x03680924 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #52: LEAK 4 direct bytes 0x03680950-0x03680954 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #53: LEAK 4 direct bytes 0x03680980-0x03680984 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #54: LEAK 4 direct bytes 0x036809b0-0x036809b4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #55: LEAK 4 direct bytes 0x03680a40-0x03680a44 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #56: LEAK 4 direct bytes 0x03680a70-0x03680a74 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #57: LEAK 44 direct bytes 0x024e0ab8-0x024e0ae4 + 968 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #58: LEAK 4 direct bytes 0x03680b00-0x03680b04 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #59: LEAK 4 direct bytes 0x03680b30-0x03680b34 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #60: LEAK 120 direct bytes 0x03680c70-0x03680ce8 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #61: LEAK 44 direct bytes 0x024e0cc8-0x024e0cf4 + 88 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #62: LEAK 44 direct bytes 0x024e0f30-0x024e0f5c + 352 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #63: LEAK 44 direct bytes 0x024e0fe0-0x024e100c + 88 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #64: LEAK 12 direct bytes 0x036610a8-0x036610b4 + 984 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #65: POSSIBLE LEAK 120 direct bytes 0x036810d0-0x03681148 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #66: LEAK 12 direct bytes 0x036610e0-0x036610ec + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #67: LEAK 12 direct bytes 0x03661188-0x03661194 + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #68: LEAK 44 direct bytes 0x024e11f0-0x024e121c + 264 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #69: LEAK 12 direct bytes 0x03661230-0x0366123c + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #70: LEAK 12 direct bytes 0x03661380-0x0366138c + 2928 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #71: LEAK 44 direct bytes 0x024e14b0-0x024e14dc + 264 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #72: LEAK 44 direct bytes 0x024e1770-0x024e179c + 264 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #73: LEAK 4 direct bytes 0x03661a80-0x03661a84 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #74: LEAK 4 direct bytes 0x03661de0-0x03661de4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #75: LEAK 4 direct bytes 0x03661e10-0x03661e14 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #76: LEAK 4 direct bytes 0x03661e40-0x03661e44 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #77: LEAK 4 direct bytes 0x03661e70-0x03661e74 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #78: LEAK 4 direct bytes 0x03661ea0-0x03661ea4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #79: LEAK 4 direct bytes 0x03661f30-0x03661f34 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #80: LEAK 4 direct bytes 0x03661fc0-0x03661fc4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #81: LEAK 12 direct bytes 0x03662070-0x0366207c + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #82: LEAK 12 direct bytes 0x036620e0-0x036620ec + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #83: LEAK 12 direct bytes 0x03662150-0x0366215c + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #84: LEAK 12 direct bytes 0x036621c0-0x036621cc + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #85: LEAK 16 direct bytes 0x036622a0-0x036622b0 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #86: LEAK 16 direct bytes 0x03662348-0x03662358 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #87: LEAK 16 direct bytes 0x036623f0-0x03662400 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #88: LEAK 3084 direct bytes 0x036e2648-0x036e3254 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+
+Error #89: LEAK 128 direct bytes 0x02542b18-0x02542b98 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!?           
+
+Error #90: LEAK 4 direct bytes 0x03662ba0-0x03662ba4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #91: LEAK 4 direct bytes 0x03662c30-0x03662c34 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #92: LEAK 4 direct bytes 0x03662c60-0x03662c64 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #93: LEAK 4 direct bytes 0x03662c90-0x03662c94 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #94: LEAK 4 direct bytes 0x03662cc0-0x03662cc4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #95: LEAK 4 direct bytes 0x03662cf0-0x03662cf4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #96: LEAK 4 direct bytes 0x03662d80-0x03662d84 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #97: LEAK 4 direct bytes 0x03662e10-0x03662e14 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #98: LEAK 4 direct bytes 0x03662ea0-0x03662ea4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #99: LEAK 4 direct bytes 0x03662f30-0x03662f34 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #100: LEAK 4 direct bytes 0x03662f60-0x03662f64 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #101: LEAK 4 direct bytes 0x03662f90-0x03662f94 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #102: LEAK 4 direct bytes 0x03662fc0-0x03662fc4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #103: LEAK 4 direct bytes 0x03662ff0-0x03662ff4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #104: LEAK 384 direct bytes 0x036e3280-0x036e3400 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+
+Error #105: POSSIBLE LEAK 439 direct bytes 0x036c32e0-0x036c3497 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #106: LEAK 96 direct bytes 0x036e3428-0x036e3488 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+
+Error #107: LEAK 1536 direct bytes 0x036e34b0-0x036e3ab0 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+
+Error #108: POSSIBLE LEAK 439 direct bytes 0x036c34c0-0x036c3677 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #109: POSSIBLE LEAK 439 direct bytes 0x036c36a0-0x036c3857 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #110: POSSIBLE LEAK 439 direct bytes 0x036c3880-0x036c3a37 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #111: POSSIBLE LEAK 439 direct bytes 0x036c3a60-0x036c3c17 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #112: LEAK 384 direct bytes 0x036e3ad8-0x036e3c58 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+
+Error #113: POSSIBLE LEAK 439 direct bytes 0x036c3c40-0x036c3df7 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #114: LEAK 36 direct bytes 0x024e3c78-0x024e3c9c + 896 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #115: LEAK 36 direct bytes 0x024e3cc8-0x024e3cec + 960 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #116: POSSIBLE LEAK 2299 direct bytes 0x036c3e20-0x036c471b + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #117: POSSIBLE LEAK 256 direct bytes 0x003e3e38-0x003e3f38 + 0 indirect bytes
+# 0 <not in a module>
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ntdll.dll!RtlQueryEnvironmentVariable
+
+Error #118: POSSIBLE LEAK 2299 direct bytes 0x036c4748-0x036c5043 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #119: POSSIBLE LEAK 819 direct bytes 0x036c5070-0x036c53a3 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #120: POSSIBLE LEAK 1555 direct bytes 0x036c5a10-0x036c6023 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #121: LEAK 128 direct bytes 0x025a6bf0-0x025a6c70 + 40 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #122: LEAK 128 direct bytes 0x025a6c98-0x025a6d18 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #123: LEAK 128 direct bytes 0x025a6d40-0x025a6dc0 + 36 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #124: LEAK 16 direct bytes 0x03667150-0x03667160 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #125: POSSIBLE LEAK 56 direct bytes 0x02547188-0x025471c0 + 100 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #126: LEAK 12 direct bytes 0x03667188-0x03667194 + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #127: LEAK 12 direct bytes 0x036671c0-0x036671cc + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #128: LEAK 128 direct bytes 0x025a71d8-0x025a7258 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvSetContext
+#11 OPENGL32.dll!wglSwapLayerBuffers
+
+Error #129: LEAK 12 direct bytes 0x036671f8-0x03667204 + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #130: LEAK 12 direct bytes 0x03667268-0x03667274 + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #131: LEAK 12 direct bytes 0x036672d8-0x036672e4 + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #132: LEAK 16 direct bytes 0x036673b8-0x036673c8 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #133: LEAK 16 direct bytes 0x03667460-0x03667470 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #134: LEAK 16 direct bytes 0x03667508-0x03667518 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #135: LEAK 16 direct bytes 0x036675b0-0x036675c0 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #136: LEAK 12 direct bytes 0x036675e8-0x036675f4 + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #137: LEAK 12 direct bytes 0x03667620-0x0366762c + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #138: LEAK 12 direct bytes 0x03667658-0x03667664 + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #139: LEAK 12 direct bytes 0x036676c8-0x036676d4 + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #140: LEAK 12 direct bytes 0x03667738-0x03667744 + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #141: LEAK 16 direct bytes 0x03667818-0x03667828 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #142: LEAK 1264 direct bytes 0x036a8750-0x036a8c40 + 29696 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #143: LEAK 4 direct bytes 0x025a9238-0x025a923c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #144: LEAK 4 direct bytes 0x025a9268-0x025a926c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #145: LEAK 4 direct bytes 0x025a9298-0x025a929c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #146: LEAK 4 direct bytes 0x025a92c8-0x025a92cc + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #147: LEAK 4 direct bytes 0x025a92f8-0x025a92fc + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #148: LEAK 4 direct bytes 0x025a9328-0x025a932c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #149: LEAK 4 direct bytes 0x025a9358-0x025a935c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #150: LEAK 4 direct bytes 0x025a9388-0x025a938c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #151: LEAK 4 direct bytes 0x025a93b8-0x025a93bc + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #152: LEAK 4 direct bytes 0x025a93e8-0x025a93ec + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #153: LEAK 4 direct bytes 0x025a9418-0x025a941c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #154: LEAK 4 direct bytes 0x025a9448-0x025a944c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #155: LEAK 4 direct bytes 0x025a9478-0x025a947c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #156: LEAK 4 direct bytes 0x025a94a8-0x025a94ac + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #157: LEAK 4 direct bytes 0x025a94d8-0x025a94dc + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #158: LEAK 4 direct bytes 0x025a9508-0x025a950c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #159: LEAK 4 direct bytes 0x025a9538-0x025a953c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #160: LEAK 56 direct bytes 0x02529568-0x025295a0 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #161: LEAK 4 direct bytes 0x025a9568-0x025a956c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #162: LEAK 4 direct bytes 0x025a9598-0x025a959c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #163: LEAK 4 direct bytes 0x025a95c8-0x025a95cc + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #164: LEAK 4 direct bytes 0x025a95f8-0x025a95fc + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #165: LEAK 56 direct bytes 0x02529628-0x02529660 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #166: LEAK 4 direct bytes 0x025a9628-0x025a962c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #167: LEAK 56 direct bytes 0x02529d48-0x02529d80 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #168: LEAK 28 direct bytes 0x005aa180-0x005aa19c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #169: LEAK 104 direct bytes 0x0252a4a0-0x0252a508 + 3332 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #170: LEAK 28 direct bytes 0x005aa8d0-0x005aa8ec + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!?           
+
+Error #171: POSSIBLE LEAK 16384 direct bytes 0x0380b160-0x0380f160 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 OPENGL32.dll!wglGetCurrentDC
+# 5 OPENGL32.dll!wglUseFontBitmapsA
+# 6 test1.exe!?        
+# 7 test1.exe!?        
+# 8 test1.exe!?        
+# 9 KERNEL32.dll!BaseThreadInitThunk
+#10 ntdll.dll!RtlInitializeExceptionChain
+#11 ntdll.dll!RtlInitializeExceptionChain
+
+Error #172: POSSIBLE LEAK 1555 direct bytes 0x036cbe28-0x036cc43b + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #173: POSSIBLE LEAK 1555 direct bytes 0x036cc470-0x036cca83 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #174: POSSIBLE LEAK 1555 direct bytes 0x036ccab8-0x036cd0cb + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #175: POSSIBLE LEAK 1555 direct bytes 0x036cd100-0x036cd713 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #176: LEAK 52 direct bytes 0x0044d5a8-0x0044d5dc + 0 indirect bytes
+# 0 MSVCR100.dll!operator new
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+
+Error #177: LEAK 52 direct bytes 0x0044d6b0-0x0044d6e4 + 0 indirect bytes
+# 0 MSVCR100.dll!operator new
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+
+Error #178: POSSIBLE LEAK 1555 direct bytes 0x036cd748-0x036cdd5b + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #179: LEAK 52 direct bytes 0x0044d7b8-0x0044d7ec + 0 indirect bytes
+# 0 MSVCR100.dll!operator new
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+
+Error #180: LEAK 52 direct bytes 0x0044d8c0-0x0044d8f4 + 0 indirect bytes
+# 0 MSVCR100.dll!operator new
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+
+Error #181: POSSIBLE LEAK 76 direct bytes 0x0376e3f8-0x0376e444 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 OPENGL32.dll!wglGetCurrentDC
+# 4 OPENGL32.dll!wglUseFontBitmapsA
+# 5 test1.exe!?        
+# 6 test1.exe!?        
+# 7 test1.exe!?        
+# 8 KERNEL32.dll!BaseThreadInitThunk
+# 9 ntdll.dll!RtlInitializeExceptionChain
+#10 ntdll.dll!RtlInitializeExceptionChain
+
+Error #182: LEAK 12 direct bytes 0x0366ec88-0x0366ec94 + 1032 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #183: LEAK 4 direct bytes 0x0258f310-0x0258f314 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #184: LEAK 8 direct bytes 0x0258f3d0-0x0258f3d8 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #185: LEAK 4 direct bytes 0x0258f550-0x0258f554 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #186: LEAK 4 direct bytes 0x0258f5b0-0x0258f5b4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #187: LEAK 4 direct bytes 0x0258f5e0-0x0258f5e4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #188: LEAK 4 direct bytes 0x0258f820-0x0258f824 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #189: LEAK 4 direct bytes 0x0258f9d0-0x0258f9d4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #190: LEAK 4 direct bytes 0x0258fa00-0x0258fa04 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #191: LEAK 68 direct bytes 0x0060ff08-0x0060ff4c + 1068 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #192: LEAK 52 direct bytes 0x002aff68-0x002aff9c + 0 indirect bytes
+# 0 MSVCR100.dll!operator new
+# 1 test1.exe!?        
+# 2 test1.exe!?        
+# 3 KERNEL32.dll!BaseThreadInitThunk
+# 4 ntdll.dll!RtlInitializeExceptionChain
+# 5 ntdll.dll!RtlInitializeExceptionChain
+
+Error #193: LEAK 68 direct bytes 0x0060ff78-0x0060ffbc + 532 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #194: LEAK 12 direct bytes 0x03650070-0x0365007c + 984 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #195: LEAK 12 direct bytes 0x03650188-0x03650194 + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #196: LEAK 12 direct bytes 0x03650230-0x0365023c + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #197: LEAK 12 direct bytes 0x036502d8-0x036502e4 + 600 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #198: POSSIBLE LEAK 1555 direct bytes 0x036d0988-0x036d0f9b + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #199: LEAK 4 direct bytes 0x03671590-0x03671594 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #200: LEAK 4 direct bytes 0x036717a0-0x036717a4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #201: LEAK 4 direct bytes 0x036717d0-0x036717d4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #202: LEAK 4 direct bytes 0x00591cc0-0x00591cc4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!ShCompile   
+# 3 ntdll.dll!RtlQueryEnvironmentVariable
+# 4 ntdll.dll!LdrResSearchResource
+# 5 ntdll.dll!LdrResSearchResource
+# 6 ntdll.dll!LdrLoadDll
+# 7 KERNELBASE.dll!LoadLibraryExW
+# 8 KERNEL32.dll!LoadLibraryW
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #203: LEAK 4 direct bytes 0x00591cf0-0x00591cf4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!ShCompile   
+# 4 ntdll.dll!RtlQueryEnvironmentVariable
+# 5 ntdll.dll!LdrResSearchResource
+# 6 ntdll.dll!LdrResSearchResource
+# 7 ntdll.dll!LdrLoadDll
+# 8 KERNELBASE.dll!LoadLibraryExW
+# 9 KERNEL32.dll!LoadLibraryW
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #204: LEAK 4 direct bytes 0x00591d80-0x00591d84 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!ShCompile   
+# 3 ntdll.dll!RtlQueryEnvironmentVariable
+# 4 ntdll.dll!LdrResSearchResource
+# 5 ntdll.dll!LdrResSearchResource
+# 6 ntdll.dll!LdrLoadDll
+# 7 KERNELBASE.dll!LoadLibraryExW
+# 8 KERNEL32.dll!LoadLibraryW
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #205: LEAK 16384 direct bytes 0x037d1f30-0x037d5f30 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 OPENGL32.dll!wglGetCurrentDC
+# 5 OPENGL32.dll!wglUseFontBitmapsA
+# 6 test1.exe!?        
+# 7 test1.exe!?        
+# 8 test1.exe!?        
+# 9 KERNEL32.dll!BaseThreadInitThunk
+#10 ntdll.dll!RtlInitializeExceptionChain
+#11 ntdll.dll!RtlInitializeExceptionChain
+
+Error #206: LEAK 128 direct bytes 0x02532b68-0x02532be8 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #207: LEAK 128 direct bytes 0x02532c10-0x02532c90 + 40 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #208: LEAK 4 direct bytes 0x03652c60-0x03652c64 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #209: LEAK 4 direct bytes 0x03652d20-0x03652d24 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #210: LEAK 4 direct bytes 0x03652d50-0x03652d54 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #211: LEAK 4 direct bytes 0x03652d80-0x03652d84 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #212: LEAK 4 direct bytes 0x03652db0-0x03652db4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #213: LEAK 4 direct bytes 0x03652de0-0x03652de4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #214: LEAK 4 direct bytes 0x03652e70-0x03652e74 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #215: LEAK 4 direct bytes 0x03652f00-0x03652f04 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #216: POSSIBLE LEAK 24 direct bytes 0x025937c8-0x025937e0 + 0 indirect bytes
+# 0 ole32.dll!CoTaskMemRealloc
+# 1 ole32.dll!CoTaskMemRealloc
+# 2 ole32.dll!IsValidPtrIn
+# 3 ole32.dll!CoTaskMemRealloc
+# 4 ole32.dll!CoTaskMemRealloc
+# 5 IMM32.dll!ImmCreateIMCC
+# 6 IMM32.dll!ImmCreateIMCC
+# 7 IMM32.dll!ImmLockIMC
+# 8 IMM32.dll!ImmSetActiveContext
+# 9 USER32.dll!CreateWindowExA
+#10 USER32.dll!UnregisterClassW
+#11 USER32.dll!ReleaseDC 
+
+Error #217: LEAK 12 direct bytes 0x03673ca8-0x03673cb4 + 384 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #218: LEAK 12 direct bytes 0x03673d18-0x03673d24 + 384 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #219: POSSIBLE LEAK 160 direct bytes 0x036d3e10-0x036d3eb0 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #220: LEAK 128 direct bytes 0x02533f38-0x02533fb8 + 488 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #221: LEAK 12 direct bytes 0x03674958-0x03674964 + 384 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #222: LEAK 16 direct bytes 0x036550e0-0x036550f0 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #223: LEAK 12 direct bytes 0x03655150-0x0365515c + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #224: LEAK 12 direct bytes 0x036551c0-0x036551cc + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #225: LEAK 12 direct bytes 0x03655230-0x0365523c + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #226: LEAK 12 direct bytes 0x036552a0-0x036552ac + 116 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #227: LEAK 16 direct bytes 0x03655380-0x03655390 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #228: LEAK 16 direct bytes 0x03655428-0x03655438 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #229: LEAK 16 direct bytes 0x036554d0-0x036554e0 + 464 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!?           
+
+Error #230: LEAK 12 direct bytes 0x025b55e8-0x025b55f4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #231: LEAK 12 direct bytes 0x025b5620-0x025b562c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #232: LEAK 12 direct bytes 0x025b5658-0x025b5664 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #233: LEAK 12 direct bytes 0x025b5690-0x025b569c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #234: LEAK 12 direct bytes 0x025b56c8-0x025b56d4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #235: LEAK 12 direct bytes 0x025b5700-0x025b570c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #236: LEAK 12 direct bytes 0x025b5738-0x025b5744 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #237: LEAK 12 direct bytes 0x025b5770-0x025b577c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #238: LEAK 12 direct bytes 0x025b57a8-0x025b57b4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #239: LEAK 12 direct bytes 0x025b57e0-0x025b57ec + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #240: LEAK 12 direct bytes 0x025b5818-0x025b5824 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #241: LEAK 12 direct bytes 0x025b5850-0x025b585c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #242: LEAK 12 direct bytes 0x025b5888-0x025b5894 + 68252 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #243: LEAK 12 direct bytes 0x025b5968-0x025b5974 + 604 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #244: LEAK 12 direct bytes 0x025b5a48-0x025b5a54 + 496 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #245: LEAK 48 direct bytes 0x005b5a90-0x005b5ac0 + 864 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvSwapLayerBuffers
+#10 ig4icd32.dll!DrvSwapLayerBuffers
+#11 ig4icd32.dll!DllMain     
+
+Error #246: LEAK 12 direct bytes 0x025b5ab8-0x025b5ac4 + 232 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #247: LEAK 12 direct bytes 0x025b5b28-0x025b5b34 + 1240 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #248: LEAK 48 direct bytes 0x005b5e88-0x005b5eb8 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvSwapLayerBuffers
+#10 ig4icd32.dll!DrvSwapLayerBuffers
+#11 ig4icd32.dll!DllMain     
+
+Error #249: LEAK 48 direct bytes 0x005b5f38-0x005b5f68 + 624 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvSwapLayerBuffers
+#10 ig4icd32.dll!DrvSwapLayerBuffers
+#11 ig4icd32.dll!DllMain     
+
+Error #250: LEAK 48 direct bytes 0x005b5fe8-0x005b6018 + 96 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvSwapLayerBuffers
+#10 ig4icd32.dll!DrvSwapLayerBuffers
+#11 ig4icd32.dll!DllMain     
+
+Error #251: LEAK 48 direct bytes 0x00596110-0x00596140 + 256 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #252: LEAK 48 direct bytes 0x00596168-0x00596198 + 608 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #253: LEAK 4096 direct bytes 0x025b61d0-0x025b71d0 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #254: LEAK 68 direct bytes 0x00537028-0x0053706c + 132 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #255: LEAK 68 direct bytes 0x00537098-0x005370dc + 168 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #256: POSSIBLE LEAK 1555 direct bytes 0x036d7130-0x036d7743 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #257: POSSIBLE LEAK 744 direct bytes 0x025b71f8-0x025b74e0 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #258: POSSIBLE LEAK 1555 direct bytes 0x036d7778-0x036d7d8b + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #259: LEAK 4096 direct bytes 0x025b77a0-0x025b87a0 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #260: LEAK 8 direct bytes 0x00537888-0x00537890 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #261: LEAK 104 direct bytes 0x025379c0-0x02537a28 + 4252 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #262: LEAK 68 direct bytes 0x00537c88-0x00537ccc + 932 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #263: POSSIBLE LEAK 1555 direct bytes 0x036d7dc0-0x036d83d3 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #264: LEAK 68 direct bytes 0x00537e70-0x00537eb4 + 332 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #265: LEAK 4 direct bytes 0x03678090-0x03678094 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #266: LEAK 4 direct bytes 0x036780c0-0x036780c4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #267: POSSIBLE LEAK 1555 direct bytes 0x036d8408-0x036d8a1b + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #268: POSSIBLE LEAK 80 direct bytes 0x00538780-0x005387d0 + 688 indirect bytes
+# 0 GDI32.dll!CreatePatternBrush
+# 1 GDI32.dll!CreateFontIndirectExW
+# 2 GDI32.dll!CreateFontIndirectW
+# 3 UxTheme.dll!GetThemeBitmap
+# 4 UxTheme.dll!Ordinal43  
+# 5 UxTheme.dll!IsThemePartDefined
+# 6 UxTheme.dll!ThemeInitApiHook
+# 7 USER32.dll!UnregisterClassW
+# 8 USER32.dll!UnregisterClassW
+# 9 ntdll.dll!KiUserCallbackDispatcher
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #269: LEAK 824 direct bytes 0x025b87c8-0x025b8b00 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #270: LEAK 68 direct bytes 0x00538810-0x00538854 + 1008 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #271: LEAK 68 direct bytes 0x00538ab0-0x00538af4 + 340 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #272: LEAK 20 direct bytes 0x005b9cd8-0x005b9cec + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!DrvSetPixelFormat
+# 6 OPENGL32.dll!wglGetProcAddress
+# 7 OPENGL32.dll!wglSetPixelFormat
+# 8 GDI32.dll!SetPixelFormat
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #273: LEAK 20 direct bytes 0x005b9de0-0x005b9df4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!DrvSetPixelFormat
+# 6 OPENGL32.dll!wglGetProcAddress
+# 7 OPENGL32.dll!wglSetPixelFormat
+# 8 GDI32.dll!SetPixelFormat
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #274: LEAK 20 direct bytes 0x005b9ee8-0x005b9efc + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!DrvSetPixelFormat
+# 6 OPENGL32.dll!wglGetProcAddress
+# 7 OPENGL32.dll!wglSetPixelFormat
+# 8 GDI32.dll!SetPixelFormat
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #275: LEAK 20 direct bytes 0x005b9ff8-0x005ba00c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!DrvSetPixelFormat
+# 6 OPENGL32.dll!wglGetProcAddress
+# 7 OPENGL32.dll!wglSetPixelFormat
+# 8 GDI32.dll!SetPixelFormat
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #276: LEAK 20 direct bytes 0x005ba100-0x005ba114 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!DrvSetPixelFormat
+# 6 OPENGL32.dll!wglGetProcAddress
+# 7 OPENGL32.dll!wglSetPixelFormat
+# 8 GDI32.dll!SetPixelFormat
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #277: LEAK 20 direct bytes 0x005ba1f8-0x005ba20c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!DrvSetPixelFormat
+# 6 OPENGL32.dll!wglGetProcAddress
+# 7 OPENGL32.dll!wglSetPixelFormat
+# 8 GDI32.dll!SetPixelFormat
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #278: LEAK 20 direct bytes 0x005ba300-0x005ba314 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!DrvSetPixelFormat
+# 6 OPENGL32.dll!wglGetProcAddress
+# 7 OPENGL32.dll!wglSetPixelFormat
+# 8 GDI32.dll!SetPixelFormat
+# 9 test1.exe!?        
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #279: LEAK 12 direct bytes 0x0367aac8-0x0367aad4 + 512 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #280: LEAK 12 direct bytes 0x0367ab38-0x0367ab44 + 512 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #281: POSSIBLE LEAK 337896 direct bytes 0x005bb4f0-0x0060dcd8 + 1894917 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 OPENGL32.dll!wglCreateLayerContext
+# 3 OPENGL32.dll!wglCreateContext
+# 4 test1.exe!?        
+# 5 test1.exe!?        
+# 6 test1.exe!?        
+# 7 KERNEL32.dll!BaseThreadInitThunk
+# 8 ntdll.dll!RtlInitializeExceptionChain
+# 9 ntdll.dll!RtlInitializeExceptionChain
+
+Error #282: POSSIBLE LEAK 1183 direct bytes 0x036dbed8-0x036dc377 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #283: LEAK 28 direct bytes 0x0251c198-0x0251c1b4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #284: LEAK 12 direct bytes 0x0053c2d8-0x0053c2e4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!ShCompile   
+# 3 ntdll.dll!RtlQueryEnvironmentVariable
+# 4 ntdll.dll!LdrResSearchResource
+# 5 ntdll.dll!LdrResSearchResource
+# 6 ntdll.dll!LdrLoadDll
+# 7 KERNELBASE.dll!LoadLibraryExW
+# 8 KERNEL32.dll!LoadLibraryW
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #285: LEAK 12 direct bytes 0x0053c310-0x0053c31c + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!ShCompile   
+# 4 ntdll.dll!RtlQueryEnvironmentVariable
+# 5 ntdll.dll!LdrResSearchResource
+# 6 ntdll.dll!LdrResSearchResource
+# 7 ntdll.dll!LdrLoadDll
+# 8 KERNELBASE.dll!LoadLibraryExW
+# 9 KERNEL32.dll!LoadLibraryW
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #286: POSSIBLE LEAK 160 direct bytes 0x036dc3a0-0x036dc440 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #287: LEAK 12 direct bytes 0x0053c3b8-0x0053c3c4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!ShCompile   
+# 3 ntdll.dll!RtlQueryEnvironmentVariable
+# 4 ntdll.dll!LdrResSearchResource
+# 5 ntdll.dll!LdrResSearchResource
+# 6 ntdll.dll!LdrLoadDll
+# 7 KERNELBASE.dll!LoadLibraryExW
+# 8 KERNEL32.dll!LoadLibraryW
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #288: POSSIBLE LEAK 12 direct bytes 0x0259c3b8-0x0259c3c4 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #289: POSSIBLE LEAK 439 direct bytes 0x036dc468-0x036dc61f + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #290: POSSIBLE LEAK 439 direct bytes 0x036dc648-0x036dc7ff + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #291: LEAK 12 direct bytes 0x0369c660-0x0369c66c + 232 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #292: POSSIBLE LEAK 104 direct bytes 0x0367c700-0x0367c768 + 30964 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!DrvCreateLayerContext
+# 7 OPENGL32.dll!wglSwapMultipleBuffers
+# 8 OPENGL32.dll!wglCreateLayerContext
+# 9 OPENGL32.dll!wglCreateContext
+#10 test1.exe!?        
+#11 test1.exe!?        
+
+Error #293: LEAK 12 direct bytes 0x0369c778-0x0369c784 + 248 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #294: LEAK 12 direct bytes 0x0369c7e8-0x0369c7f4 + 248 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #295: POSSIBLE LEAK 439 direct bytes 0x036dc828-0x036dc9df + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #296: LEAK 68 direct bytes 0x0053c9c0-0x0053ca04 + 232 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #297: POSSIBLE LEAK 1183 direct bytes 0x036dca08-0x036dcea7 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #298: LEAK 12 direct bytes 0x0369ca18-0x0369ca24 + 264 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #299: LEAK 68 direct bytes 0x0053cbf0-0x0053cc34 + 232 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #300: LEAK 68 direct bytes 0x0053cdb0-0x0053cdf4 + 232 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!DllMain     
+# 2 ig4icd32.dll!DllMain     
+# 3 ig4icd32.dll!DllMain     
+# 4 ig4icd32.dll!DllMain     
+# 5 ig4icd32.dll!DllMain     
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!DrvCreateLayerContext
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglCreateLayerContext
+#11 OPENGL32.dll!wglCreateContext
+
+Error #301: POSSIBLE LEAK 1183 direct bytes 0x036dced0-0x036dd36f + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #302: POSSIBLE LEAK 1183 direct bytes 0x036dd398-0x036dd837 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #303: POSSIBLE LEAK 439 direct bytes 0x036dd860-0x036dda17 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #304: POSSIBLE LEAK 1183 direct bytes 0x036dda40-0x036ddedf + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #305: POSSIBLE LEAK 80 direct bytes 0x0259dd98-0x0259dde8 + 400 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #306: POSSIBLE LEAK 1183 direct bytes 0x036ddf08-0x036de3a7 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #307: LEAK 28 direct bytes 0x0059e320-0x0059e33c + 76 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #308: POSSIBLE LEAK 1183 direct bytes 0x036de3d0-0x036de86f + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #309: POSSIBLE LEAK 439 direct bytes 0x036de898-0x036dea4f + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #310: LEAK 120 direct bytes 0x0367eaf0-0x0367eb68 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!DrvCreateLayerContext
+# 8 OPENGL32.dll!wglSwapMultipleBuffers
+# 9 OPENGL32.dll!wglCreateLayerContext
+#10 OPENGL32.dll!wglCreateContext
+#11 test1.exe!?        
+
+Error #311: LEAK 56 direct bytes 0x0259f238-0x0259f270 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #312: POSSIBLE LEAK 337896 direct bytes 0x0053f438-0x00591c20 + 2580 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!ShCompile   
+# 3 ntdll.dll!RtlQueryEnvironmentVariable
+# 4 ntdll.dll!LdrResSearchResource
+# 5 ntdll.dll!LdrResSearchResource
+# 6 ntdll.dll!LdrLoadDll
+# 7 KERNELBASE.dll!LoadLibraryExW
+# 8 KERNEL32.dll!LoadLibraryW
+# 9 OPENGL32.dll!wglSwapMultipleBuffers
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #313: LEAK 48 direct bytes 0x024df460-0x024df490 + 624 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #314: LEAK 56 direct bytes 0x0259f4d8-0x0259f510 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #315: LEAK 48 direct bytes 0x024df510-0x024df540 + 96 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!DrvCreateLayerContext
+#10 OPENGL32.dll!wglSwapMultipleBuffers
+#11 OPENGL32.dll!wglCreateLayerContext
+
+Error #316: LEAK 128 direct bytes 0x0253f888-0x0253f908 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #317: LEAK 128 direct bytes 0x0253f9a8-0x0253fa28 + 0 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!ShCompile   
+# 2 ig4icd32.dll!ShCompile   
+# 3 ig4icd32.dll!ShCompile   
+# 4 ig4icd32.dll!ShCompile   
+# 5 ig4icd32.dll!ShCompile   
+# 6 ig4icd32.dll!ShCompile   
+# 7 ig4icd32.dll!ShCompile   
+# 8 ig4icd32.dll!ShCompile   
+# 9 ig4icd32.dll!ShCompile   
+#10 ig4icd32.dll!ShCompile   
+#11 ig4icd32.dll!ShCompile   
+
+Error #318: LEAK 168 direct bytes 0x0369fa38-0x0369fae0 + 3712 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!?           
+#11 ig4icd32.dll!DrvCreateLayerContext
+
+Error #319: LEAK 12 direct bytes 0x0367fb38-0x0367fb44 + 128 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+Error #320: LEAK 12 direct bytes 0x0367fcf8-0x0367fd04 + 128 indirect bytes
+# 0 KERNELBASE.dll!GlobalAlloc   
+# 1 ig4icd32.dll!?           
+# 2 ig4icd32.dll!?           
+# 3 ig4icd32.dll!?           
+# 4 ig4icd32.dll!?           
+# 5 ig4icd32.dll!?           
+# 6 ig4icd32.dll!?           
+# 7 ig4icd32.dll!?           
+# 8 ig4icd32.dll!?           
+# 9 ig4icd32.dll!?           
+#10 ig4icd32.dll!DrvCreateLayerContext
+#11 OPENGL32.dll!wglSwapMultipleBuffers
+
+DUPLICATE ERROR COUNTS:
+	Error #  22:     96
+	Error #  23:     96
+	Error #  24:      5
+	Error #  25:      5
+	Error #  30:    100
+	Error #  31:     66
+	Error #  32:    100
+	Error #  33:    100
+	Error #  34:    100
+	Error #  43:    300
+	Error #  49:      4
+	Error #  50:      6
+	Error #  60:     15
+	Error #  70:      3
+	Error #  73:      3
+	Error #  74:      2
+	Error #  75:      2
+	Error #  76:      2
+	Error #  77:      2
+	Error #  78:      2
+	Error #  79:      2
+	Error #  80:      2
+	Error #  81:      2
+	Error #  82:      2
+	Error #  83:      2
+	Error #  84:      2
+	Error #  85:      2
+	Error #  86:      2
+	Error #  87:      2
+	Error #  90:      2
+	Error # 120:     16
+	Error # 124:      2
+	Error # 171:      7
+	Error # 178:      8
+	Error # 181:     10
+	Error # 182:     12
+	Error # 198:     16
+	Error # 199:     12
+	Error # 200:      9
+	Error # 201:      8
+	Error # 202:      2
+	Error # 203:      2
+	Error # 205:      3
+	Error # 208:      2
+	Error # 217:      8
+	Error # 218:      8
+	Error # 222:      2
+	Error # 265:      5
+	Error # 266:      5
+	Error # 279:      5
+	Error # 280:      5
+	Error # 284:      2
+	Error # 285:      2
+	Error # 319:      4
+	Error # 320:      6
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      2 unique,     2 total unaddressable access(es)
+     36 unique,   994 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      7 unique,     7 total warning(s)
+    228 unique,   353 total, 284536 byte(s) of leak(s)
+     47 unique,    99 total, 2815852 byte(s) of possible leak(s)
+ERRORS IGNORED:
+   4918 still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\projects\drmemory-plugin\branches\work\jobs\GE\workspace\drmemory\12/DrMemory-test1.exe.5472.000/results.txt
