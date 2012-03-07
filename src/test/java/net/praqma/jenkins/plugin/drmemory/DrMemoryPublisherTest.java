@@ -6,13 +6,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 
+import hudson.Extension;
 import hudson.Launcher;
 import hudson.model.BuildListener;
 import hudson.model.FreeStyleBuild;
 import hudson.model.AbstractBuild;
+import hudson.model.AbstractProject;
 import hudson.model.Cause;
 import hudson.model.FreeStyleProject;
+import hudson.tasks.BuildStepDescriptor;
+import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Builder;
+import hudson.tasks.Notifier;
+import hudson.tasks.Publisher;
+import hudson.tasks.junit.TestDataPublisher;
 
 import net.praqma.drmemory.DrMemory;
 
@@ -47,6 +54,11 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		DrMemoryPublisher publisher = new DrMemoryPublisher();
 		project.getPublishersList().add( publisher );
 		
+		//project.getPublishersList().add( new RemoveFileNotifier( "drmemory/1/results.txt" ) );
+		//project.getPublishersList().add( new RemoveFileNotifier( "results.txt", Location.BUILD ) );
+
+		
+		
 		FreeStyleBuild b = project.scheduleBuild2( 0, new Cause.UserIdCause() ).get();
 		
 		System.out.println( "Workspace: " + b.getWorkspace() );
@@ -59,7 +71,7 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		BufferedReader br = new BufferedReader( new FileReader( b.getLogFile() ) );
 		String line = "";
 		while( ( line = br.readLine() ) != null ) {
-			System.out.println( ":: " + line );
+			System.out.println( "[JENKINS] " + line );
 		}
 		
 		if( action != null ) {
