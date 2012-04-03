@@ -90,6 +90,7 @@ public class DrMemoryPublisher extends Recorder {
 		DrMemoryBuildAction action = build.getAction( DrMemoryBuildAction.class );
 
 		out.println( "My workspace is " + build.getWorkspace() );
+		out.println( "My workspace is " + action.getBuilder().getFinalLogPath() );
 		FilePath resultPath = new FilePath( build.getWorkspace(), action.getBuilder().getFinalLogPath() );
 		
 		FilePath[] rr = resultPath.list( "**/results.txt" );

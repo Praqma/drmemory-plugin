@@ -77,18 +77,17 @@ public class DrMemoryBuildAction implements Action {
 		return builder;
 	}
 
+	@Override
 	public String getDisplayName() {
 		return "DrMemory";
 	}
 
-	public String getSearchUrl() {
-		return getUrlName();
-	}
-
+	@Override
 	public String getIconFileName() {
 		return "graph.gif";
 	}
 
+	@Override
 	public String getUrlName() {
 		return "drmemory";
 	}

@@ -36,6 +36,7 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 
 		DrMemory.skipRun();
 		final InputStream in = getClass().getClassLoader().getResourceAsStream( "results.txt" );
+		System.out.println( "[TEST] " + in );
 		
 		/* To get the real workspace and copy the results.txt */
 		project.getBuildersList().add(new TestBuilder() {
@@ -79,5 +80,7 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		} else {
 			System.out.println( "ACTION IS NULL" );
 		}
+		
+		assertNotNull( action );
 	}
 }
