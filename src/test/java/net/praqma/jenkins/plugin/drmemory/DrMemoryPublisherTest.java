@@ -1,12 +1,14 @@
 package net.praqma.jenkins.plugin.drmemory;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 
 import hudson.Extension;
+import hudson.FilePath;
 import hudson.Launcher;
 import hudson.model.BuildListener;
 import hudson.model.FreeStyleBuild;
@@ -33,7 +35,8 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 	public void test() throws IOException, InterruptedException, ExecutionException {
 		
 		FreeStyleProject project = createFreeStyleProject( "drmemory" );
-
+		
+		
 		DrMemory.skipRun();
 		final InputStream in = getClass().getClassLoader().getResourceAsStream( "results.txt" );
 		System.out.println( "[TEST] " + in );
@@ -62,7 +65,16 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		
 		FreeStyleBuild b = project.scheduleBuild2( 0, new Cause.UserIdCause() ).get();
 		
+		in.close();
+		
 		System.out.println( "Workspace: " + b.getWorkspace() );
+		File drmFile = new File( b.getWorkspace() + "/drmemory/1/results.txt" );
+		System.out.println( "DRMFILE: " + drmFile );
+		drmFile.delete();
+		drmFile.getParentFile().delete();
+		drmFile.getParentFile().getParentFile().delete();
+		drmFile.getParentFile().getParentFile().getParentFile().delete();
+		drmFile.getParentFile().getParentFile().getParentFile().getParentFile().delete();
 		
 		DrMemoryBuildAction action = b.getAction( DrMemoryBuildAction.class );
 		
@@ -74,6 +86,8 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		while( ( line = br.readLine() ) != null ) {
 			System.out.println( "[JENKINS] " + line );
 		}
+		
+		br.close();
 		
 		if( action != null ) {
 			System.out.println( "Action: " + action.getResult() );
