@@ -36,6 +36,7 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		
 		FreeStyleProject project = createFreeStyleProject( "drmemory" );
 		
+		System.out.println( "PATH: " + super.jenkins.getRootDir() );
 		
 		DrMemory.skipRun();
 		final InputStream in = getClass().getClassLoader().getResourceAsStream( "results.txt" );

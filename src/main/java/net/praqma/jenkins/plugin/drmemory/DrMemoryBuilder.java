@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.logging.Logger;
 
+import jenkins.model.Jenkins;
+
 import net.praqma.drmemory.DrMemory;
 import net.sf.json.JSONObject;
 
@@ -42,6 +44,9 @@ public class DrMemoryBuilder extends Builder {
 		/* Add the action */
 		DrMemoryBuildAction dba = new DrMemoryBuildAction( build, this );
 		build.addAction( dba );
+		
+		String version = Jenkins.getInstance().getPlugin( "drmemory-plugin" ).getWrapper().getVersion();
+		out.println( "Dr Memory Plugin version " + version );
 		
 		try {
 			finalLogPath = logPath += ( logPath.endsWith( "/" ) ? "" : ( logPath.endsWith( "\\" ) ? "" : "/" ) );
