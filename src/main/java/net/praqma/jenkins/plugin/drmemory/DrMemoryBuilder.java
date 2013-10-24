@@ -19,6 +19,7 @@ import hudson.model.AbstractProject;
 import hudson.model.BuildListener;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
+import java.io.File;
 
 public class DrMemoryBuilder extends Builder {
 	
@@ -37,6 +38,7 @@ public class DrMemoryBuilder extends Builder {
 		this.logPath = logPath;
 	}
 	
+	@Override
 	public boolean perform( AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener ) throws InterruptedException {
 		PrintStream out = listener.getLogger();
 		//DrMemory.enableLogging();
@@ -49,7 +51,7 @@ public class DrMemoryBuilder extends Builder {
 		out.println( "Dr Memory Plugin version " + version );
 		
 		try {
-			finalLogPath = logPath += ( logPath.endsWith( "/" ) ? "" : ( logPath.endsWith( "\\" ) ? "" : "/" ) );
+			finalLogPath = logPath += ( logPath.endsWith( File.separator ) ? "" : File.separator );
 			finalLogPath += build.getNumber();
 			build.getWorkspace().act( new DrMemoryRemoteBuilder( executable, arguments, finalLogPath, listener ) );
 			return true;
