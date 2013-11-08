@@ -33,7 +33,7 @@ public class DrMemoryRemoteBuilder implements FileCallable<Boolean> {
 		
 		File executable = new File( workspace, this.executable );
 		out.println( "Executing " + executable + " " + arguments );
-		DrMemory dm = new DrMemory( executable, arguments );
+		DrMemory dm = new DrMemory( executable, arguments );                
 		
 		File logpath = new File( workspace, this.logPath );
 		logpath.mkdirs();
@@ -43,7 +43,7 @@ public class DrMemoryRemoteBuilder implements FileCallable<Boolean> {
 		try {
 			dm.start();
 		} catch( Exception e ) {
-			out.println( "Recieved " + e.getMessage() );
+			throw new IOException(String.format( "Dr. Memory retuned with a non-zero exit code. Message was:%n%s",e.getMessage()) );
 		}
 		
 		return true;

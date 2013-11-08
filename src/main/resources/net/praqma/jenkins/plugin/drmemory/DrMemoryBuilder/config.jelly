@@ -13,4 +13,8 @@
         <f:textbox name="drmemory.logPath" value="${instance.logPath}" default="drmemory/" />
     </f:entry>
     
+    <f:entry title="${%Treat failed builds as unstable}" field="treatFailed">
+        <f:checkbox/>
+    </f:entry>
+    
 </j:jelly>
