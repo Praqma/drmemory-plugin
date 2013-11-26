@@ -7,7 +7,7 @@
         <j:choose>
             <j:when test="${lastResult.previousResult != null}">
             	<j:forEach var="unit" items="${lastResult.getPublisher().getGraphs()}">
-                        <img src="${from.urlName}/graph?type=${unit.getName()}"/>
+                        <img src="${from.urlName}/graph?type=${unit.getName()}"/><br/>
 	            </j:forEach>
             </j:when>
             <j:otherwise>
