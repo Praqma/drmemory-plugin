@@ -35,6 +35,8 @@ public class DrMemoryRemoteBuilder implements FileCallable<Boolean> {
 		out.println( "Executing " + executable + " " + arguments );
 		DrMemory dm = new DrMemory( executable, arguments );                
 		
+		dm.setWorkDir(workspace);
+		
 		File logpath = new File( workspace, this.logPath );
 		logpath.mkdirs();
 		out.println( "Setting log path to " + logpath );
