@@ -35,193 +35,163 @@ import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
 import hudson.model.Action;
 import hudson.model.BuildListener;
-import hudson.model.Result;
-import hudson.model.Descriptor;
 import hudson.model.Descriptor.FormException;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Publisher;
 import hudson.tasks.Recorder;
+import static net.praqma.jenkins.plugin.drmemory.DrMemoryPublisher.__OUTPUT;
+import static net.praqma.jenkins.plugin.drmemory.DrMemoryPublisher.graphTypes;
 
 public class DrMemoryPublisher extends Recorder {
 
-	private static final Logger logger = Logger.getLogger( DrMemoryPublisher.class.getName() );
+    private static final Logger logger = Logger.getLogger(DrMemoryPublisher.class.getName());
+    public static final String __OUTPUT = "drmemory.txt";
+    public static Map<String, AbstractGraph> graphTypes = new HashMap<String, AbstractGraph>();
 
-	public static final String __OUTPUT = "drmemory.txt";
-	
-	public static Map<String, AbstractGraph> graphTypes = new HashMap<String, AbstractGraph>();
-	
-	static {
-		graphTypes.put( "total-leaks", new TotalLeaksGraph() );
-		graphTypes.put( "all-leaks", new AllLeaksGraph() );
-		graphTypes.put( "actual-leaks", new ActualLeaksGraph() );
-		graphTypes.put( "bytes-of-leak", new BytesOfLeakGraph() );
-		graphTypes.put( "allocations", new StillReachableAllocationsGraph() );
-		graphTypes.put( "uninitialized-accesses", new UninitializedAccessesGraph() );
-		graphTypes.put( "unaddressable-accesses", new UnaddressableAccessesGraph() );
-		graphTypes.put( "warnings", new WarningsGraph() );
-		graphTypes.put( "invalid-heap-arguments", new InvalidHeapArgumentsGraph() );
-	}
+    static {
+        graphTypes.put("total-leaks", new TotalLeaksGraph());
+        graphTypes.put("all-leaks", new AllLeaksGraph());
+        graphTypes.put("actual-leaks", new ActualLeaksGraph());
+        graphTypes.put("bytes-of-leak", new BytesOfLeakGraph());
+        graphTypes.put("allocations", new StillReachableAllocationsGraph());
+        graphTypes.put("uninitialized-accesses", new UninitializedAccessesGraph());
+        graphTypes.put("unaddressable-accesses", new UnaddressableAccessesGraph());
+        graphTypes.put("warnings", new WarningsGraph());
+        graphTypes.put("invalid-heap-arguments", new InvalidHeapArgumentsGraph());
+    }
 
-	@DataBoundConstructor
-	public DrMemoryPublisher() {
-	}
+    @DataBoundConstructor
+    public DrMemoryPublisher() { }
 
-	@Override
-	public BuildStepMonitor getRequiredMonitorService() {
-		return BuildStepMonitor.BUILD;
-	}
+    @Override
+    public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
+        FilePath workspaceResult = null;
+        File path = build.getRootDir();
+        File result = new File(path, __OUTPUT);
+        FilePath buildTarget = new FilePath(build.getRootDir());
+        PrintStream out = listener.getLogger();
 
-	@Override
-	public boolean perform( AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener ) throws InterruptedException, IOException {
-		
-		/*
-		if( build.getResult().isWorseOrEqualTo( Result.FAILURE ) ) {
-			return true;
-		}
-		*/
-		
-		FilePath workspaceResult = null;
-		File path = build.getRootDir();
-		File result = new File( path, __OUTPUT );
-		FilePath buildTarget = new FilePath( build.getRootDir() );
-		PrintStream out = listener.getLogger();
-		
-		DrMemoryBuildAction action = build.getAction( DrMemoryBuildAction.class );
+        DrMemoryBuildAction action = build.getAction(DrMemoryBuildAction.class);
 
-		out.println( "My workspace is " + build.getWorkspace() );
-		out.println( "My workspace is " + action.getBuilder().getFinalLogPath() );
-		FilePath resultPath = new FilePath( build.getWorkspace(), action.getBuilder().getFinalLogPath() );
-		
-		FilePath[] rr = resultPath.list( "**/results.txt" );
-		
-		if( rr.length < 1 ) {
-			out.println( "No results to parse" );
-			return true;
-		}
+        out.println("My workspace is " + build.getWorkspace());
+        out.println("My workspace is " + action.getBuilder().getFinalLogPath());
+        FilePath resultPath = new FilePath(build.getWorkspace(), action.getBuilder().getFinalLogPath());
 
-		workspaceResult = rr[0];
+        FilePath[] rr = resultPath.list("**/results.txt");
 
-		out.println( "I got " + workspaceResult );
+        if (rr.length < 1) {
+            out.println("No results to parse");
+            return true;
+        }
 
-		if( workspaceResult != null ) {
+        workspaceResult = rr[0];
 
-			/* Save output to build path */
-			final FilePath targetPath = new FilePath( result );
-			try {
-				workspaceResult.copyTo( targetPath );
-			} catch( IOException e ) {
-				Util.displayIOException( e, listener );
-				e.printStackTrace( listener.fatalError( "Unable to copy result file from " + workspaceResult + " to " + buildTarget ) );
-				build.setResult( Result.FAILURE );
-			}
-		}
+        out.println("I got " + workspaceResult);
 
-		DrMemoryResult dresult = null;
-		try {
-			dresult = DrMemoryResult.parse( result );
+        if (workspaceResult != null) {
+            /* Save output to build path */
+            final FilePath targetPath = new FilePath(result);
+            try {
+                workspaceResult.copyTo(targetPath);
+            } catch (IOException e) {
+                Util.displayIOException(e, listener);
+                e.printStackTrace(listener.fatalError("Unable to copy result file from " + workspaceResult + " to " + buildTarget));
+                return false;
+            }
+        }
 
-			action.setPublisher( this );
-			action.setResult( dresult );
+        DrMemoryResult dresult = null;
+        try {
+            dresult = DrMemoryResult.parse(result);
 
-		} catch( InvalidInputException e ) {
-			out.println( "Invalid input: " + e.getMessage() );
-			return false;
-		}
+            action.setPublisher(this);
+            action.setResult(dresult);
 
-		return true;
-	}
-		
-	private List<Graph> graphs;
-	
-	
+        } catch (InvalidInputException e) {
+            out.println("Invalid input: " + e.getMessage());
+            return false;
+        }
+
+        return true;
+    }
+    private List<Graph> graphs;
+
     @Override
     public Action getProjectAction(AbstractProject<?, ?> project) {
-        return new DrMemoryProjectAction( project );
+        return new DrMemoryProjectAction(project);
     }
-    
+
     public Map<String, AbstractGraph> getGraphTypes() {
-    	return graphTypes;
+        return graphTypes;
     }
-    
-    public void setGraphs( List<Graph> graphs ) {
-    	this.graphs = graphs;
+
+    public void setGraphs(List<Graph> graphs) {
+        this.graphs = graphs;
     }
-    
-	public AbstractGraph getGraph( String type ) {
-		return graphTypes.get( type );
-	}
-    
+
+    public AbstractGraph getGraph(String type) {
+        return graphTypes.get(type);
+    }
+
     public List<Graph> getGraphs() {
-    	return graphs;
+        return graphs;
     }
 
-	@Extension
-	public static class DescriptorImpl extends BuildStepDescriptor<Publisher> {
-		public String getDisplayName() {
-			return "Dr. Memory Report";
-		}
+    @Override
+    public BuildStepMonitor getRequiredMonitorService() {
+        return BuildStepMonitor.BUILD;
+    }
+ 
+    @Extension
+    public static class DescriptorImpl extends BuildStepDescriptor<Publisher> {
+        
+        @Override
+        public String getDisplayName() {
+            return "Dr. Memory Report";
+        }
 
-		@Override
-		public boolean isApplicable( Class<? extends AbstractProject> arg0 ) {
-			return true;
-		}
+        @Override
+        public boolean isApplicable(Class<? extends AbstractProject> arg0) {
+            return true;
+        }
 
-		@Override
-		public DrMemoryPublisher newInstance( StaplerRequest req, JSONObject formData ) throws FormException {
-			DrMemoryPublisher instance = req.bindJSON( DrMemoryPublisher.class, formData );
-			
-			/* total leaks */
-			/*
-			boolean total_leaks = req.getParameter( "graph.total-leaks" ) != null;
-			instance.selectedGraphs.put( "total-leaks", total_leaks );
-			*/
-			
-			System.out.println( formData.toString( 2 ) );
-			
-			List<Graph> graphs = req.bindParametersToList(Graph.class, "drmemory.graph.");
-			instance.setGraphs( graphs );
-			save();
-			return instance;
-		}
-		
-		public List<Graph> getGraphs( DrMemoryPublisher instance ) {
-			if( instance == null ) {
-				return new ArrayList<Graph>();
-			} else {
-				return instance.getGraphs();
-			}
-		}
-		
-		public AbstractGraph getGraph( String type ) {
-			return graphTypes.get( type );
-		}
-		
-		public Set<String> getGraphTypes() {
-			return graphTypes.keySet();
-		}
-		
-		/*
-		public List<String> getGraphTypes() {
-			Set<String> keys = graphTypes.keySet();
-			List<>
-			for( String key : keys ) {
-				
-			}
-		}
-		*/
+        @Override
+        public DrMemoryPublisher newInstance(StaplerRequest req, JSONObject formData) throws FormException {
+            DrMemoryPublisher instance = req.bindJSON(DrMemoryPublisher.class, formData);
 
-		/*GLOBAL*/
-		@Override
-		public boolean configure( StaplerRequest req, JSONObject formData ) throws FormException {
-			logger.warning( "CONFIGURE" );
-			req.bindParameters( this, "drmemory." );
-			boolean total_leak = req.getParameter( "graph.total-leak" ) != null;
-			logger.warning( "tll: " + total_leak );
-			//DrMemoryPublisher.this.selectedGraphs.put( "total-leak", total_leak );
-			save();
-			return super.configure( req, formData );
-		}
+            List<Graph> graphs = req.bindParametersToList(Graph.class, "drmemory.graph.");
+            instance.setGraphs(graphs);
+            save();
+            return instance;
+        }
 
-	}
+        public List<Graph> getGraphs(DrMemoryPublisher instance) {
+            if (instance == null) {
+                return new ArrayList<Graph>();
+            } else {
+                return instance.getGraphs();
+            }
+        }
+
+        public AbstractGraph getGraph(String type) {
+            return graphTypes.get(type);
+        }
+
+        public Set<String> getGraphTypes() {
+            return graphTypes.keySet();
+        }
+        
+        /*GLOBAL*/
+        @Override
+        public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+            logger.warning("CONFIGURE");
+            req.bindParameters(this, "drmemory.");
+            boolean total_leak = req.getParameter("graph.total-leak") != null;
+            logger.warning("tll: " + total_leak);
+
+            save();
+            return super.configure(req, formData);
+        }
+    }
 }

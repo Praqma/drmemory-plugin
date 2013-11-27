@@ -52,17 +52,12 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		});
 		
 		/* DrMemoryBuilder*/
-		Builder builder = new DrMemoryBuilder( "", "", "drmemory" );
+		Builder builder = new DrMemoryBuilder( "", "", "drmemory", false );
 		project.getBuildersList().add( builder );
 		
 		/* Recorder */
 		DrMemoryPublisher publisher = new DrMemoryPublisher();
 		project.getPublishersList().add( publisher );
-		
-		//project.getPublishersList().add( new RemoveFileNotifier( "drmemory/1/results.txt" ) );
-		//project.getPublishersList().add( new RemoveFileNotifier( "results.txt", Location.BUILD ) );
-
-		
 		
 		FreeStyleBuild b = project.scheduleBuild2( 0, new Cause.UserIdCause() ).get();
 		
@@ -83,8 +78,8 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		System.out.println( "Logfile: " + b.getLogFile() );
 		
 		BufferedReader br = new BufferedReader( new FileReader( b.getLogFile() ) );
-		String line = "";
-		while( ( line = br.readLine() ) != null ) {
+		String line = "";	
+	while( ( line = br.readLine() ) != null ) {
 			System.out.println( "[JENKINS] " + line );
 		}
 		
