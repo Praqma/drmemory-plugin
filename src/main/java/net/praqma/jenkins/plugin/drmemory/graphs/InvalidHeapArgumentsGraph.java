@@ -3,13 +3,15 @@ package net.praqma.jenkins.plugin.drmemory.graphs;
 import hudson.util.ChartUtil;
 import hudson.util.DataSetBuilder;
 import hudson.util.ChartUtil.NumberOnlyBuildLabel;
-import net.praqma.jenkins.plugin.drmemory.DrMemoryBuildAction;
+import net.praqma.drmemory.DrMemoryResult;
 
 public class InvalidHeapArgumentsGraph extends AbstractGraph {
 
 	@Override
-	public float[] getNumber( DrMemoryBuildAction action ) {
-		return new float[] { action.getResult().getInvalidHeapArguments().total, action.getResult().getInvalidHeapArguments().unique };
+	public float[] getNumber( DrMemoryResult r ) {
+		float values[] = new float[] { r.getInvalidHeapArguments().total, r.getInvalidHeapArguments().unique };
+		
+		return values;
 	}
 
 	@Override

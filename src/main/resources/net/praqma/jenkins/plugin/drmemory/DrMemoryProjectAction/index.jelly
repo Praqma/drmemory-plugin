@@ -8,8 +8,10 @@
 
 		    <j:if test="${lastResult != null}">
 		        <j:choose>
-	            	<j:forEach var="unit" items="${lastResult.getPublisher().getGraphs()}">
-	                        <img src="graph?type=${unit.getName()}&amp;width=800&amp;height=300"/><br />
+		           	<j:forEach var="publisher" items="${lastResult.getPublishers()}">
+		            	<j:forEach var="unit" items="${publisher.getGraphs()}">
+		                        <img src="graph?type=${unit.getName()}&amp;width=800&amp;height=300"/><br />
+			            </j:forEach>
 		            </j:forEach>
 		        </j:choose>
 		    </j:if>

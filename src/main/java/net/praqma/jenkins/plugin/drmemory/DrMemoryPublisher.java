@@ -3,12 +3,15 @@ package net.praqma.jenkins.plugin.drmemory;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import net.praqma.drmemory.DrMemoryResult;
 import net.praqma.drmemory.exceptions.InvalidInputException;
@@ -35,18 +38,16 @@ import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
 import hudson.model.Action;
 import hudson.model.BuildListener;
-import hudson.model.Descriptor.FormException;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Publisher;
 import hudson.tasks.Recorder;
-import static net.praqma.jenkins.plugin.drmemory.DrMemoryPublisher.__OUTPUT;
-import static net.praqma.jenkins.plugin.drmemory.DrMemoryPublisher.graphTypes;
 
 public class DrMemoryPublisher extends Recorder {
 
-    private static final Logger logger = Logger.getLogger(DrMemoryPublisher.class.getName());
+    private static final Logger log = Logger.getLogger(DrMemoryPublisher.class.getName());
     public static final String __OUTPUT = "drmemory.txt";
+    private String logPath;
     public static Map<String, AbstractGraph> graphTypes = new HashMap<String, AbstractGraph>();
 
     static {
@@ -60,58 +61,88 @@ public class DrMemoryPublisher extends Recorder {
         graphTypes.put("warnings", new WarningsGraph());
         graphTypes.put("invalid-heap-arguments", new InvalidHeapArgumentsGraph());
     }
+    
+	private static final Pattern directory_pattern = Pattern.compile("DrMemory\\-(.*)\\.(.*)\\.(.*)");
 
     @DataBoundConstructor
-    public DrMemoryPublisher() { }
+    public DrMemoryPublisher(String logPath) {
+    	this.logPath = logPath;
+    }
 
     @Override
     public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
-        FilePath workspaceResult = null;
-        File path = build.getRootDir();
-        File result = new File(path, __OUTPUT);
-        FilePath buildTarget = new FilePath(build.getRootDir());
+        File rootDir = build.getRootDir();
+    	File resultOutput = new File(rootDir, __OUTPUT);
         PrintStream out = listener.getLogger();
-
-        DrMemoryBuildAction action = build.getAction(DrMemoryBuildAction.class);
+        DrMemoryBuildAction action = DrMemoryBuildAction.getActionForBuild(build);
 
         out.println("My workspace is " + build.getWorkspace());
-        out.println("My workspace is " + action.getBuilder().getFinalLogPath());
-        FilePath resultPath = new FilePath(build.getWorkspace(), action.getBuilder().getFinalLogPath());
 
-        FilePath[] rr = resultPath.list("**/results.txt");
+        assert(logPath != null);
+        FilePath resultPath = new FilePath(build.getWorkspace(), logPath);
+        
+        List<FilePath> resultFiles = new ArrayList<FilePath>();
+    	try {
+    		FilePath[] rr = resultPath.list("**/results.txt");
+    		for (FilePath r : rr) {
+    			resultFiles.add(r);
+    		}
+    	}
+    	catch(Exception e) {
+    		out.println("Error reading results: " + e.toString());        		
+    	}
 
-        if (rr.length < 1) {
+        if (resultFiles.isEmpty()) {
             out.println("No results to parse");
             return true;
         }
-
-        workspaceResult = rr[0];
-
-        out.println("I got " + workspaceResult);
-
-        if (workspaceResult != null) {
-            /* Save output to build path */
-            final FilePath targetPath = new FilePath(result);
-            try {
-                workspaceResult.copyTo(targetPath);
-            } catch (IOException e) {
-                Util.displayIOException(e, listener);
-                e.printStackTrace(listener.fatalError("Unable to copy result file from " + workspaceResult + " to " + buildTarget));
-                return false;
-            }
-        }
-
-        DrMemoryResult dresult = null;
+        
+        /* Concatenate results */
         try {
-            dresult = DrMemoryResult.parse(result);
-
-            action.setPublisher(this);
-            action.setResult(dresult);
-
-        } catch (InvalidInputException e) {
-            out.println("Invalid input: " + e.getMessage());
+        	StringBuffer buffer = new StringBuffer();
+        	for (FilePath result : resultFiles) {
+        		buffer.append(result.readToString());
+        	}
+        	FilePath output = new FilePath(resultOutput);
+        	output.write(buffer.toString(), null);
+        } catch (IOException e) {
+            Util.displayIOException(e, listener);
+            e.printStackTrace(listener.fatalError("Unable to concatenate results to " + resultOutput));
             return false;
         }
+
+        /* Read all results */
+        for (FilePath result : resultFiles) {
+	        try {
+	            DrMemoryResult dresult = DrMemoryResult.parse(new File(result.toString()));
+	            String directory_name = result.getParent().getName();
+	            Matcher match = directory_pattern.matcher(directory_name);
+	            
+	            if(match.find()) {
+		            String name = match.group(1);
+		            int pid = Integer.parseInt(match.group(2));
+		            
+		            try {
+						Field cmd = dresult.getClass().getDeclaredField("cmd");
+						cmd.setAccessible(true);
+						cmd.set(dresult, name);
+					} catch (SecurityException e) {
+						e.printStackTrace();
+					} catch (NoSuchFieldException e) {
+						e.printStackTrace();
+					} catch (IllegalArgumentException e) {
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+					}
+		        }
+	            action.addResult(dresult);
+	        } catch (InvalidInputException e) {
+	            out.println("Invalid input: " + e.getMessage() + ", file: " + result);
+	        }
+        }
+        
+        action.addPublisher(this);
 
         return true;
     }
@@ -122,7 +153,7 @@ public class DrMemoryPublisher extends Recorder {
         return new DrMemoryProjectAction(project);
     }
 
-    public Map<String, AbstractGraph> getGraphTypes() {
+    public static Map<String, AbstractGraph> getGraphTypes() {
         return graphTypes;
     }
 
@@ -136,6 +167,14 @@ public class DrMemoryPublisher extends Recorder {
 
     public List<Graph> getGraphs() {
         return graphs;
+    }
+    
+    public String getLogPath() {
+    	return logPath;
+    }
+    
+    public void setLogPath(String logDir) {
+    	this.logPath = logDir;
     }
 
     @Override
@@ -180,18 +219,6 @@ public class DrMemoryPublisher extends Recorder {
 
         public Set<String> getGraphTypes() {
             return graphTypes.keySet();
-        }
-        
-        /*GLOBAL*/
-        @Override
-        public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
-            logger.warning("CONFIGURE");
-            req.bindParameters(this, "drmemory.");
-            boolean total_leak = req.getParameter("graph.total-leak") != null;
-            logger.warning("tll: " + total_leak);
-
-            save();
-            return super.configure(req, formData);
         }
     }
 }

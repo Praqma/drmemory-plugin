@@ -3,13 +3,15 @@ package net.praqma.jenkins.plugin.drmemory.graphs;
 import hudson.util.ChartUtil;
 import hudson.util.DataSetBuilder;
 import hudson.util.ChartUtil.NumberOnlyBuildLabel;
-import net.praqma.jenkins.plugin.drmemory.DrMemoryBuildAction;
+import net.praqma.drmemory.DrMemoryResult;
 
 public class UnaddressableAccessesGraph extends AbstractGraph {
 
 	@Override
-	public float[] getNumber( DrMemoryBuildAction action ) {
-		return new float[] { action.getResult().getUnaddressableAccesses().total, action.getResult().getUnaddressableAccesses().unique };
+	public float[] getNumber( DrMemoryResult r ) {
+		float values[] = new float[] { r.getUnaddressableAccesses().total, r.getUnaddressableAccesses().unique };
+		
+		return values;
 	}
 
 	@Override

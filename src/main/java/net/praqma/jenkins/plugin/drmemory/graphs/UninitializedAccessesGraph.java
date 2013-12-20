@@ -3,13 +3,15 @@ package net.praqma.jenkins.plugin.drmemory.graphs;
 import hudson.util.ChartUtil;
 import hudson.util.DataSetBuilder;
 import hudson.util.ChartUtil.NumberOnlyBuildLabel;
-import net.praqma.jenkins.plugin.drmemory.DrMemoryBuildAction;
+import net.praqma.drmemory.DrMemoryResult;
 
 public class UninitializedAccessesGraph extends AbstractGraph {
 
 	@Override
-	public float[] getNumber( DrMemoryBuildAction action ) {
-		return new float[] { action.getResult().getUninitializedAccess().total, action.getResult().getUninitializedAccess().unique };
+	public float[] getNumber( DrMemoryResult r ) {
+		float values[] = new float[] { r.getUninitializedAccess().total, r.getUninitializedAccess().unique };
+		
+		return values;
 	}
 
 	@Override
@@ -17,7 +19,7 @@ public class UninitializedAccessesGraph extends AbstractGraph {
 		dsb.add( values[0], "Total Uninitialized accesses", label );
 		dsb.add( values[1], "Unique Uninitialized accesses", label );
 	}
-
+	
 	@Override
 	public String getTitle() {
 		return "Uninitialized accesses";

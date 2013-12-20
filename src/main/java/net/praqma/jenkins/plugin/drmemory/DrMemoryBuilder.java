@@ -1,13 +1,11 @@
 package net.praqma.jenkins.plugin.drmemory;
 
-import hudson.AbortException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.logging.Logger;
 
 import jenkins.model.Jenkins;
 
-import net.praqma.drmemory.DrMemory;
 import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -45,14 +43,14 @@ public class DrMemoryBuilder extends Builder {
         PrintStream out = listener.getLogger();
 
         /* Add the action */
-        DrMemoryBuildAction dba = new DrMemoryBuildAction(build, this);
-        build.addAction(dba);
+        DrMemoryBuildAction dba = DrMemoryBuildAction.getActionForBuild(build);
+        dba.addBuilder(this);
 
         String version = Jenkins.getInstance().getPlugin("drmemory-plugin").getWrapper().getVersion();
         out.println("Dr Memory Plugin version " + version);
 
         try {
-            finalLogPath = logPath += (logPath.endsWith(File.separator) ? "" : File.separator);
+            finalLogPath = logPath + (logPath.endsWith(File.separator) ? "" : File.separator);
             finalLogPath += build.getNumber();
             build.getWorkspace().act(new DrMemoryRemoteBuilder(executable, arguments, finalLogPath, listener));
             return true;
