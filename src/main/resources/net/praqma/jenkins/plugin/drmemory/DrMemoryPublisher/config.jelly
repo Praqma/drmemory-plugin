@@ -1,7 +1,7 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
 	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
 
-	<f:entry title="${%Dr Memory Graphs}" help="/plugin/drmemory-plugin/help/help-stream.html">
+	<f:entry title="${%Dr Memory Graphs}" help="/plugin/drmemory-plugin/help/graph.html">
 		<j:set var="types" value="${descriptor.getGraphTypes()}" />
 		<f:repeatable var="inst" varStatus="instStatus" items="${descriptor.getGraphs(instance)}">
 			
@@ -13,7 +13,7 @@
                         <td align="left">
 							<select class="setting-input" name="drmemory.graph.name">
 								<j:forEach var="t" items="${types}">
-									<f:option selected="${t == inst.name}" value="${t}">${instance.getGraph(t).getTitle()}</f:option>
+									<f:option selected="${t == inst.name}" value="${t}">${descriptor.getGraph(t).getTitle()}</f:option>
 								</j:forEach>
 							</select>
 						</td>
@@ -27,5 +27,8 @@
 			</table>
 		</f:repeatable>
 	</f:entry>
-
+	
+	<f:entry title="${%Log path}">
+        <f:textbox name="drmemory.logPath" value="${instance.logPath}" default="drmemory" />
+    </f:entry>
 </j:jelly>

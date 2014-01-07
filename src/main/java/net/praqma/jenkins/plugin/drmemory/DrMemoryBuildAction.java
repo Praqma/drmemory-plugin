@@ -4,7 +4,9 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -42,30 +44,37 @@ public class DrMemoryBuildAction implements Action {
 
         TOTAL_LEAK
     }
-    private DrMemoryResult result;
     private final AbstractBuild<?, ?> build;
-    private DrMemoryPublisher publisher;
-    private DrMemoryBuilder builder;
+    private List<DrMemoryPublisher> publishers;
+    private List<DrMemoryBuilder> builders;
+    private List<DrMemoryResult> results;
 
-    public DrMemoryBuildAction(AbstractBuild<?, ?> build, DrMemoryBuilder builder) {
+    protected DrMemoryBuildAction(AbstractBuild<?, ?> build) {
         this.build = build;
-        this.builder = builder;
+        this.builders = new ArrayList<DrMemoryBuilder>();
+        this.results = new ArrayList<DrMemoryResult>();
+        this.publishers = new ArrayList<DrMemoryPublisher>();
     }
 
-    public void setPublisher(DrMemoryPublisher publisher) {
-        this.publisher = publisher;
+
+    public void addPublisher(DrMemoryPublisher publisher) {
+        this.publishers.add(publisher);
     }
 
-    public DrMemoryPublisher getPublisher() {
-        return publisher;
+    public void addBuilder(DrMemoryBuilder builder) {
+        this.builders.add(builder);
     }
 
-    public void setResult(DrMemoryResult result) {
-        this.result = result;
+    public List<DrMemoryPublisher> getPublishers() {
+        return publishers;
     }
 
-    public DrMemoryBuilder getBuilder() {
-        return builder;
+    public void addResult(DrMemoryResult result) {
+        this.results.add(result);
+    }
+
+    public List<DrMemoryBuilder> getBuilders() {
+        return builders;
     }
 
     @Override
@@ -83,12 +92,22 @@ public class DrMemoryBuildAction implements Action {
         return "drmemory";
     }
 
-    public DrMemoryResult getResult() {
-        return result;
+    public List<DrMemoryResult> getResults() {
+        return results;
+    }
+    
+    public static DrMemoryBuildAction getActionForBuild(AbstractBuild<?, ?> build) {
+        DrMemoryBuildAction action = build.getAction(DrMemoryBuildAction.class);
+        if (action == null) {
+        	action = new DrMemoryBuildAction(build);
+        	build.addAction(action);
+        }
+    	
+    	return action;
     }
 
     public void doIndex(StaplerRequest req, StaplerResponse rsp) throws IOException, ServletException {
-        File dm = new File(build.getRootDir(), "drmemory.txt");
+        File dm = new File(build.getRootDir(), DrMemoryPublisher.__OUTPUT);
         Calendar t = build.getTimestamp();
         if (dm.exists()) {
             rsp.serveFile(req, FileUtils.openInputStream(dm), t.getTimeInMillis(), dm.getTotalSpace(), "drmemory.txt");
@@ -99,21 +118,15 @@ public class DrMemoryBuildAction implements Action {
 
     static DrMemoryBuildAction getPreviousResult(AbstractBuild<?, ?> start) {
         AbstractBuild<?, ?> b = start;
-        while (true) {
-            b = b.getPreviousBuild();
-            if (b == null) {
-                return null;
-            }
-
+        while ((b = b.getPreviousBuild()) != null) {
             DrMemoryBuildAction r = b.getAction(DrMemoryBuildAction.class);
-            if (r != null && r.getResult() == null) {
-                r = null;
+            if (r == null || r.getResults() == null || r.getResults().isEmpty()) {
+                continue;
             }
 
-            if (r != null) {
-                return r;
-            }
+            return r;
         }
+        return null;
     }
 
     public DrMemoryBuildAction getPreviousResult() {
@@ -156,10 +169,10 @@ public class DrMemoryBuildAction implements Action {
 
         boolean latest = true;
         String yaxis = "???";
-        float min = 999999999;
+        float min = Float.MAX_VALUE;
         float max = 0;
 
-        AbstractGraph g = publisher.getGraphTypes().get(type);
+        AbstractGraph g = DrMemoryPublisher.getGraphTypes().get(type);
         if (g == null) {
             rsp.sendError(1);
             return;
@@ -172,10 +185,27 @@ public class DrMemoryBuildAction implements Action {
             /* Make the x-axis label */
             ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel(a.build);
 
-            float[] ns = g.getNumber(a);
-            g.addX(dsb, ns, label);
+            if(a.getResults().size() == 0)
+            	return;
+            
+        	int fields = g.getNumber(a.getResults().get(0)).length;
+            float[] sums = new float[fields];
 
-            for (float n : ns) {
+        	for(int i=0; i < fields; ++i) {
+            	sums[i] = 0;
+            }
+            
+            /* Sum all results */
+            for(DrMemoryResult result : a.getResults()) {
+	            float[] ns = g.getNumber(result);
+	            for(int i=0; i < ns.length; ++i) {
+	            	sums[i] += ns[i];
+	            }
+            }
+            
+            g.addX(dsb, sums, label);
+
+            for (float n : sums) {
                 if (n > max) {
                     max = n;
                 }
@@ -183,10 +213,10 @@ public class DrMemoryBuildAction implements Action {
                 if (n < min) {
                     min = n;
                 }
+            }
 
-                if (latest) {
-                    yaxis = g.getYAxis();
-                }
+            if (latest) {
+                yaxis = g.getYAxis();
             }
 
             latest = false;

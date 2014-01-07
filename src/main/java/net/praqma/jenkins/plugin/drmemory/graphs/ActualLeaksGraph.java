@@ -3,15 +3,16 @@ package net.praqma.jenkins.plugin.drmemory.graphs;
 import hudson.util.ChartUtil;
 import hudson.util.DataSetBuilder;
 import hudson.util.ChartUtil.NumberOnlyBuildLabel;
-import net.praqma.jenkins.plugin.drmemory.DrMemoryBuildAction;
+import net.praqma.drmemory.DrMemoryResult;
 
 public class ActualLeaksGraph extends AbstractGraph {
 
 	@Override
-	public float[] getNumber( DrMemoryBuildAction action ) {
-		return new float[] { action.getResult().getLeakCount().total, action.getResult().getLeakCount().unique };
+	public float[] getNumber( DrMemoryResult r ) {
+		float values[] = new float[] { r.getLeakCount().total, r.getLeakCount().unique };
+		return values;
 	}
-
+	
 	@Override
 	public void addX( DataSetBuilder<String, ChartUtil.NumberOnlyBuildLabel> dsb, float[] values, NumberOnlyBuildLabel label ) {
 		dsb.add( values[0], "Total Leaks", label );

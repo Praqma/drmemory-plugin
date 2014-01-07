@@ -7,21 +7,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 
-import hudson.Extension;
-import hudson.FilePath;
 import hudson.Launcher;
 import hudson.model.BuildListener;
 import hudson.model.FreeStyleBuild;
 import hudson.model.AbstractBuild;
-import hudson.model.AbstractProject;
 import hudson.model.Cause;
 import hudson.model.FreeStyleProject;
-import hudson.tasks.BuildStepDescriptor;
-import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Builder;
-import hudson.tasks.Notifier;
-import hudson.tasks.Publisher;
-import hudson.tasks.junit.TestDataPublisher;
 
 import net.praqma.drmemory.DrMemory;
 
@@ -56,7 +48,7 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		project.getBuildersList().add( builder );
 		
 		/* Recorder */
-		DrMemoryPublisher publisher = new DrMemoryPublisher();
+		DrMemoryPublisher publisher = new DrMemoryPublisher("drmemory");
 		project.getPublishersList().add( publisher );
 		
 		FreeStyleBuild b = project.scheduleBuild2( 0, new Cause.UserIdCause() ).get();
@@ -86,7 +78,7 @@ public class DrMemoryPublisherTest extends HudsonTestCase {
 		br.close();
 		
 		if( action != null ) {
-			System.out.println( "Action: " + action.getResult() );
+			System.out.println( "Action: " + action.getResults().get(0) );
 		} else {
 			System.out.println( "ACTION IS NULL" );
 		}
