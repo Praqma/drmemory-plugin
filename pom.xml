@@ -91,18 +91,12 @@
 	</profile>
 </profiles>
 
-	<developers>
-		<developer>
-			<id>wolfgarnet</id>
-			<name>Christian Wolfgang</name>
-			<email>coolers@praqma.net</email>
-			<organization>Praqma A/S</organization>
-			<roles>
-				<role>developer</role>
-			</roles>
-			<timezone>+1</timezone>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <id>praqma_josra</id>
+            <name>Praqma Josra</name>
+        </developer>
+    </developers>
 
 	<scm>
 		<connection>scm:git:ssh://github.com/Praqma/drmemory-plugin.git</connection>
