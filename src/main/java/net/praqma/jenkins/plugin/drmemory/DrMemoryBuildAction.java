@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
+import hudson.model.Run;
 import org.apache.commons.io.FileUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
@@ -183,7 +184,7 @@ public class DrMemoryBuildAction implements Action {
             logger.finest("Build " + a.getDisplayName());
 
             /* Make the x-axis label */
-            ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel(a.build);
+            ChartUtil.NumberOnlyBuildLabel label = new ChartUtil.NumberOnlyBuildLabel((Run<?, ?>) a.build);
 
             if(a.getResults().size() == 0)
             	return;

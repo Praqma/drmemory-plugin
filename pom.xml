@@ -3,7 +3,8 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>1.565.3</version>
+        <version>3.8</version>
+        <relativePath />
     </parent>
 
     <groupId>net.praqma</groupId>
@@ -15,27 +16,15 @@
     <packaging>hpi</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jenkins.version>2.19.4</jenkins.version>
+        <java.level>8</java.level>
     </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <repositories>
 
         <repository>
             <id>repo.jenkins-ci.org</id>
-            <url>http://repo.jenkins-ci.org/public/</url>
+            <url>https://repo.jenkins-ci.org/public/</url>
         </repository>
 
         <repository>
@@ -47,54 +36,14 @@
     <pluginRepositories>
         <pluginRepository>
             <id>repo.jenkins-ci.org</id>
-            <url>http://repo.jenkins-ci.org/public/</url>
+            <url>https://repo.jenkins-ci.org/public/</url>
         </pluginRepository>
     </pluginRepositories>
 
-
-    <profiles>
-        <profile>
-            <id>cobertura</id>
-            <activation>
-                <property>
-                    <!-- Hudson by default defines a property BUILD_NUMBER which is used 
-                    to enable the profile. -->
-                    <name>BUILD_NUMBER</name>
-                </property>
-            </activation>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>cobertura-maven-plugin</artifactId>
-                        <version>2.4</version>
-                        <configuration>
-                            <formats>
-                                <format>html</format>
-                                <format>xml</format>
-                            </formats>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>do-coverage</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>cobertura</goal>
-                                </goals>
-                                <!-- <inherited>false</inherited> <configuration> </configuration> -->
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <developers>
         <developer>
-            <id>praqma_josra</id>
-            <name>Praqma Josra</name>
+            <id>OEHC</id>
+            <name>Oliver Emil Harritslev Christensen</name>
         </developer>
     </developers>
 
@@ -108,10 +57,10 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
-		
+
         <dependency>
             <groupId>net.praqma</groupId>
             <artifactId>drmemory-api</artifactId>
@@ -123,6 +72,18 @@
             <artifactId>job-dsl</artifactId>
             <version>1.37</version>
             <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.groovy</groupId>
+                    <artifactId>groovy-all</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+            <version>3.0.1</version>
         </dependency>
     </dependencies>
 

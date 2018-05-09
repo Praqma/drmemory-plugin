@@ -1,0 +1,10 @@
+net.praqma.drmemory.DrMemoryResult
+net.praqma.drmemory.DrMemoryResult$ErrorSummary
+net.praqma.jenkins.plugin.drmemory.DrMemoryBuildAction#results
+hudson.model.Actionable#actions
+net.praqma.drmemory.errors.UninitializedRead
+net.praqma.drmemory.DrMemoryError$Note
+net.praqma.drmemory.errors.Warning
+net.praqma.drmemory.errors.UnaddressableAccess
+net.praqma.drmemory.errors.Leak
+net.praqma.drmemory.errors.Unknown

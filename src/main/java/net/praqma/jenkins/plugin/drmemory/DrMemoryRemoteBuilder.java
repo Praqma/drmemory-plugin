@@ -9,6 +9,7 @@ import net.praqma.drmemory.DrMemory;
 import hudson.FilePath.FileCallable;
 import hudson.model.BuildListener;
 import hudson.remoting.VirtualChannel;
+import org.jenkinsci.remoting.RoleChecker;
 
 public class DrMemoryRemoteBuilder implements FileCallable<Boolean> {
 	
@@ -50,5 +51,9 @@ public class DrMemoryRemoteBuilder implements FileCallable<Boolean> {
 		
 		return true;
 	}
-	
+
+	@Override
+	public void checkRoles(RoleChecker roleChecker) throws SecurityException {
+
+	}
 }
