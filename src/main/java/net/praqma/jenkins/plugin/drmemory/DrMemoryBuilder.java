@@ -50,9 +50,12 @@ public class DrMemoryBuilder extends Builder {
         out.println("Dr Memory Plugin version " + version);
 
         try {
-            finalLogPath = logPath + (logPath.endsWith(File.separator) ? "" : File.separator);
-            finalLogPath += build.getNumber();
-            build.getWorkspace().act(new DrMemoryRemoteBuilder(executable, arguments, finalLogPath, listener));
+            if(logPath != null) {
+                finalLogPath = logPath + (logPath.endsWith(File.separator) ? "" : File.separator);
+                finalLogPath += build.getNumber();
+            }
+            hudson.FilePath ws = build.getWorkspace();
+            if(ws != null) ws.act(new DrMemoryRemoteBuilder(executable, arguments, finalLogPath, listener));
             return true;
         } catch (IOException e) {
             if (isTreatFailed()) {
@@ -102,6 +105,7 @@ public class DrMemoryBuilder extends Builder {
     public static class DescriptorImpl extends BuildStepDescriptor<Builder> {
 
         @Override
+        @edu.umd.cs.findbugs.annotations.SuppressFBWarnings("NP_PARAMETER_MUST_BE_NONNULL_BUT_MARKED_AS_NULLABLE")
         public DrMemoryBuilder newInstance(StaplerRequest req, JSONObject data) {
             DrMemoryBuilder instance = req.bindJSON(DrMemoryBuilder.class, data);
             save();

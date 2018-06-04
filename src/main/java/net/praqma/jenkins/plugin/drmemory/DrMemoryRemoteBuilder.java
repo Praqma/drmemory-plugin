@@ -39,7 +39,8 @@ public class DrMemoryRemoteBuilder implements FileCallable<Boolean> {
 		dm.setWorkDir(workspace);
 		
 		File logpath = new File( workspace, this.logPath );
-		logpath.mkdirs();
+		boolean createdDirs = logpath.mkdirs();
+		if(createdDirs) out.println("Created logdir: "+logpath);
 		out.println( "Setting log path to " + logpath );
 		dm.setLogDir( logpath );
 		

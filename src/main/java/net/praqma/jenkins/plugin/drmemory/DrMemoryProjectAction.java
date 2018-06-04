@@ -47,6 +47,7 @@ public class DrMemoryProjectAction extends Actionable implements ProminentProjec
         }
     }
 
+    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings("NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE")
     public DrMemoryBuildAction getLastResult() {
         for (AbstractBuild<?, ?> b = getLastBuildToBeConsidered(); b != null; b = b.getPreviousNotFailedBuild()) {
             if (b.getResult().isBetterOrEqualTo(Result.UNSTABLE)) {

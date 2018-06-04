@@ -48,7 +48,7 @@ public class DrMemoryPublisher extends Recorder {
     private static final Logger log = Logger.getLogger(DrMemoryPublisher.class.getName());
     public static final String __OUTPUT = "drmemory.txt";
     private String logPath;
-    public static Map<String, AbstractGraph> graphTypes = new HashMap<String, AbstractGraph>();
+    static final Map<String, AbstractGraph> graphTypes = new HashMap<String, AbstractGraph>();
 
     static {
         graphTypes.put("total-leaks", new TotalLeaksGraph());
@@ -196,9 +196,9 @@ public class DrMemoryPublisher extends Recorder {
         }
 
         @Override
+        @edu.umd.cs.findbugs.annotations.SuppressFBWarnings("NP_PARAMETER_MUST_BE_NONNULL_BUT_MARKED_AS_NULLABLE")
         public DrMemoryPublisher newInstance(StaplerRequest req, JSONObject formData) throws FormException {
             DrMemoryPublisher instance = req.bindJSON(DrMemoryPublisher.class, formData);
-
             List<Graph> graphs = req.bindParametersToList(Graph.class, "drmemory.graph.");
             instance.setGraphs(graphs);
             save();

@@ -239,11 +239,6 @@ public class DrMemoryBuildAction implements Action {
                 false // urls
                 );
 
-        // NOW DO SOME OPTIONAL CUSTOMISATION OF THE CHART...
-
-        final LegendTitle legend = chart.getLegend();
-
-
         chart.setBackgroundPaint(Color.white);
 
         final CategoryPlot plot = chart.getCategoryPlot();
