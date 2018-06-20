@@ -25,11 +25,6 @@
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>
         </repository>
-
-        <repository>
-            <id>praqma-repo</id>
-            <url>http://code.praqma.net/repo/maven/</url>
-        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -47,11 +42,11 @@
     </developers>
 
     <scm>
-        <connection>scm:git:ssh://github.com/Praqma/drmemory-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/Praqma/drmemory-plugin.git</developerConnection>
+        <connection>scm:git:https://github.com/Praqma/drmemory-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/Praqma/drmemory-plugin.git</developerConnection>
         <url>https://github.com/Praqma/drmemory-plugin.git</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -64,7 +59,7 @@
         <dependency>
             <groupId>net.praqma</groupId>
             <artifactId>drmemory-api</artifactId>
-            <version>0.1.4</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
