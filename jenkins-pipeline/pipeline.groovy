@@ -1,4 +1,4 @@
-multibranchPipelineJob("Codesonar Jenkins Plugin") {
+multibranchPipelineJob("Dr Memory Jenkins Plugin") {
     factory {
         workflowBranchProjectFactory {
             scriptPath('jenkins-pipeline/Jenkinsfile')
