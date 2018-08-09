@@ -3,6 +3,10 @@ properties([parameters([booleanParam(defaultValue: false, description: '', name:
 node("dockerhost1") {
 
     stage("checkout") {
+        if(isRelease) {
+            //Cleanup when releasing
+            deleteDir()  
+        }
         checkout scm
     } 
        
