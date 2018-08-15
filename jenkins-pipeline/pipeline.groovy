@@ -9,10 +9,6 @@ multibranchPipelineJob("Dr Memory Jenkins Plugin") {
             credentialsId("github")
             remote("https://github.com/Praqma/drmemory-plugin.git")
         }
-
-        triggers {
-            periodic(20)
-        }
     }
 
     configure {
